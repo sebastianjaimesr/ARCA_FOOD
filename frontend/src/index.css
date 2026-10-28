@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+/* Identidad de El Arca: amarillo del logo sobre negro, igual que la carta impresa. */
+@theme {
+  --color-ink-950: #070707;
+  --color-ink-900: #0b0b0b;
+  --color-ink-800: #141414;
+  --color-ink-700: #1e1e1e;
+  --color-ink-600: #2a2a2a;
+  --color-ink-400: #6b6b6b;
+
+  --color-brand-300: #ffe066;
+  --color-brand-400: #ffd21f;
+  --color-brand-500: #ffc700;
+  --color-brand-600: #e0ad00;
+
+  --color-cream-50: #fffaf0;
+  --color-cream-100: #f5efe2;
+  --color-cream-300: #cfc8b8;
+
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-script: 'Lobster', cursive;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-ink-900 font-sans text-cream-100 antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

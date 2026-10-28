@@ -1,0 +1,19 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Variables de entorno: nunca se suben al repositorio.
+.env
+.env.*
+!.env.example
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json

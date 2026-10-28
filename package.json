@@ -1,0 +1,15 @@
+{
+  "name": "el-arca",
+  "private": true,
+  "description": "Tienda en línea y panel administrativo de El Arca – Comidas Rápidas (Bucaramanga)",
+  "workspaces": ["frontend", "backend"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "npm run dev -w backend",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm run test --workspaces",
+    "build": "npm run build --workspaces"
+  }
+}
