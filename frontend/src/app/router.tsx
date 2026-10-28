@@ -1,14 +1,12 @@
 import { createBrowserRouter } from 'react-router'
-import { AdminLayout } from '../components/layout/AdminLayout'
 import { StoreLayout } from '../components/layout/StoreLayout'
-import { AdminDashboardPage } from '../pages/admin/AdminDashboardPage'
 import { CartPage } from '../pages/CartPage'
 import { HomePage } from '../pages/HomePage'
 import { MenuPage } from '../pages/MenuPage'
 import { NotFoundPage } from '../pages/NotFoundPage'
 
-// La tienda y el panel tienen layouts separados. El panel se protegerá con
-// autenticación en la Fase 3; el backend valida el rol en cada petición.
+// La tienda y el panel tienen layouts separados. Todo /admin se carga bajo
+// demanda (lazy) para que la tienda sea liviana en el celular.
 export const router = createBrowserRouter([
   {
     element: <StoreLayout />,
@@ -21,7 +19,21 @@ export const router = createBrowserRouter([
   },
   {
     path: 'admin',
-    element: <AdminLayout />,
-    children: [{ index: true, element: <AdminDashboardPage /> }],
+    lazy: async () => ({ Component: (await import('./AdminShell')).AdminRoot }),
+    children: [
+      {
+        path: 'login',
+        lazy: async () => ({ Component: (await import('../pages/admin/AdminLoginPage')).AdminLoginPage }),
+      },
+      {
+        lazy: async () => ({ Component: (await import('./AdminShell')).ProtectedAdminLayout }),
+        children: [
+          {
+            index: true,
+            lazy: async () => ({ Component: (await import('../pages/admin/AdminDashboardPage')).AdminDashboardPage }),
+          },
+        ],
+      },
+    ],
   },
 ])

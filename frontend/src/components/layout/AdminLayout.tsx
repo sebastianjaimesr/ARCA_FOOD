@@ -1,5 +1,6 @@
-import { Boxes, ClipboardList, LayoutDashboard, Settings, UtensilsCrossed } from 'lucide-react'
+import { Boxes, ClipboardList, LayoutDashboard, LogOut, Settings, UtensilsCrossed } from 'lucide-react'
 import { Link, NavLink, Outlet } from 'react-router'
+import { useAuth } from '../../features/auth/auth-context'
 
 const sections = [
   { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
@@ -10,6 +11,9 @@ const sections = [
 ]
 
 export function AdminLayout() {
+  const { state, signOut } = useAuth()
+  const user = state.status === 'signed-in' ? state.user : null
+
   return (
     <div className="flex min-h-dvh bg-ink-950">
       <aside className="hidden w-60 shrink-0 flex-col border-r border-ink-700 bg-ink-900 md:flex">
@@ -40,8 +44,22 @@ export function AdminLayout() {
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex h-16 items-center border-b border-ink-700 bg-ink-900 px-4 md:px-8">
+        <header className="flex h-16 items-center justify-between gap-4 border-b border-ink-700 bg-ink-900 px-4 md:px-8">
           <h1 className="text-sm font-semibold text-cream-300">Panel administrativo</h1>
+          {user && (
+            <div className="flex min-w-0 items-center gap-3">
+              <span className="hidden truncate text-xs text-cream-300 sm:block">
+                {user.email} · <span className="font-semibold text-brand-400">{user.role === 'admin' ? 'Administrador' : 'Personal'}</span>
+              </span>
+              <button
+                onClick={signOut}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-ink-600 px-3 py-1.5 text-xs font-semibold text-cream-100 hover:border-brand-500 hover:text-brand-400"
+              >
+                <LogOut className="size-3.5" aria-hidden />
+                Salir
+              </button>
+            </div>
+          )}
         </header>
         <main className="flex-1 p-4 md:p-8">
           <Outlet />

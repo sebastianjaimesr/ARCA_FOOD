@@ -5,21 +5,29 @@ const API_URL = import.meta.env.VITE_API_URL ?? ''
 export class ApiError extends Error {
   readonly status: number
   readonly code: string
+  readonly details?: unknown
 
-  constructor(status: number, code: string, message: string) {
+  constructor(status: number, code: string, message: string, details?: unknown) {
     super(message)
     this.name = 'ApiError'
     this.status = status
     this.code = code
+    this.details = details
   }
 }
 
-export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
+type ApiOptions = RequestInit & { token?: string | null }
+
+export async function apiFetch<T>(path: string, { token, headers, ...init }: ApiOptions = {}): Promise<T> {
   let res: Response
   try {
     res = await fetch(`${API_URL}${path}`, {
       ...init,
-      headers: { 'Content-Type': 'application/json', ...init?.headers },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers,
+      },
     })
   } catch {
     throw new ApiError(0, 'NETWORK_ERROR', 'No pudimos conectar con el servidor. Revisa tu conexión.')
@@ -28,7 +36,7 @@ export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> 
   const body = await res.json().catch(() => null)
   if (!res.ok) {
     const error = body?.error
-    throw new ApiError(res.status, error?.code ?? 'UNKNOWN', error?.message ?? 'Ocurrió un error inesperado')
+    throw new ApiError(res.status, error?.code ?? 'UNKNOWN', error?.message ?? 'Ocurrió un error inesperado', error?.details)
   }
   return body as T
 }
@@ -36,3 +44,7 @@ export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> 
 export type Health = { status: 'ok'; service: string; time: string }
 
 export const getHealth = () => apiFetch<Health>('/api/health')
+
+export type StaffUser = { id: string; email: string; fullName: string | null; role: 'admin' | 'staff' }
+
+export const getMe = (token: string) => apiFetch<StaffUser>('/api/admin/me', { token })

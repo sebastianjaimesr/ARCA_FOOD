@@ -3,58 +3,92 @@
 Tienda en línea con pedidos por WhatsApp y panel administrativo para
 **El Arca**, Cl 103 #14-27, Bucaramanga.
 
-> Estado: **Fase 2 (estructura)**. La base de datos, el menú y los pedidos se
-> construyen en las fases siguientes. Datos reales del negocio en
-> [docs/datos-del-negocio.md](docs/datos-del-negocio.md).
+> Estado: **Fase 3 (datos, seguridad y API)**. La base de datos, la carta real,
+> la autenticación y la API completa están listas y probadas. La tienda (menú,
+> carrito, WhatsApp) y las pantallas del panel se construyen en las fases 4 a 6.
+
+## Documentación
+
+- [Datos del negocio y carta 2025](docs/datos-del-negocio.md)
+- [Reglas de negocio](docs/reglas-de-negocio.md): precios, estados, inventario, estadísticas
+- [API REST](docs/api.md)
+- [Seguridad y creación del primer administrador](docs/seguridad.md)
 
 ## Estructura
 
 ```
 el-arca/
-├── frontend/          React + Vite + TypeScript + Tailwind (tienda y panel /admin)
+├── frontend/              React 19 + Vite + TypeScript + Tailwind
 │   └── src/
-│       ├── app/           router
+│       ├── app/           router (el panel /admin se carga bajo demanda)
 │       ├── components/    layouts y UI reutilizable
 │       ├── pages/         páginas de la tienda y del panel
-│       ├── features/      lógica por módulo (products, cart, orders, inventory, analytics)
+│       ├── features/      módulos: auth, cart, orders, products, inventory, analytics
 │       ├── services/      cliente HTTP de la API
-│       ├── config/        datos del negocio (temporal, pasan a la BD en Fase 3)
-│       └── lib/           utilidades (formato de pesos, etc.)
-├── backend/           Express + TypeScript (API REST)
-│   └── src/
-│       ├── config/        variables de entorno validadas con Zod
-│       ├── routes/        definición de rutas
-│       ├── controllers/   entrada/salida HTTP
-│       ├── services/      reglas de negocio
-│       ├── repositories/  consultas SQL
-│       ├── middlewares/   errores, auth, rate limit
-│       └── validators/    esquemas Zod de las solicitudes
-├── supabase/          config local, migraciones SQL y pruebas de la BD
-└── docs/              documentación del negocio y del sistema
+│       └── lib/           utilidades (formato de pesos, cliente de Supabase Auth)
+├── backend/               Express 5 + TypeScript
+│   ├── src/
+│   │   ├── config/        variables de entorno validadas con Zod
+│   │   ├── domain/        reglas puras: precios, estados, horario (sin BD)
+│   │   ├── routes/        rutas públicas y /admin
+│   │   ├── controllers/   entrada/salida HTTP
+│   │   ├── services/      reglas de negocio con transacciones
+│   │   ├── repositories/  consultas SQL parametrizadas
+│   │   ├── middlewares/   auth/roles, rate limit, errores
+│   │   └── validators/    esquemas Zod de cada solicitud
+│   ├── scripts/           set-role (dar acceso al personal)
+│   └── tests/             unitarias e integración
+├── supabase/
+│   ├── migrations/        esquema, seguridad (RLS) y carta 2025
+│   └── tests/             pruebas pgTAP de la base de datos
+└── docs/
 ```
 
 ## Requisitos
 
 - Node.js 22 o superior (probado con 24.15)
-- Docker Desktop (para Supabase local, desde la Fase 3)
+- Docker Desktop **abierto** (Supabase local corre en contenedores)
 
-## Desarrollo
+## Puesta en marcha (desarrollo)
 
 ```bash
 npm install
-cp backend/.env.example backend/.env
-npm run dev:backend    # http://localhost:4000/api/health
-npm run dev:frontend   # http://localhost:5173
+npx supabase start          # primera vez: descarga imágenes (varios minutos)
+npx supabase status         # muestra URL y claves locales
 ```
 
-El frontend reenvía `/api` al backend (proxy de Vite), así que en desarrollo
-no hace falta configurar CORS.
+Crea `backend/.env` a partir de `backend/.env.example` y `frontend/.env.local`
+a partir de `frontend/.env.example` con los valores de `supabase status`
+(`DB_URL`, `API_URL`, `SERVICE_ROLE_KEY`, `ANON_KEY`).
 
-## Comandos de calidad
+```bash
+npm run dev:backend         # http://localhost:4000/api/health
+npm run dev:frontend        # http://localhost:5173  (panel: /admin)
+```
+
+Para entrar al panel, crea tu cuenta y dale rol siguiendo
+[docs/seguridad.md](docs/seguridad.md#crear-la-primera-cuenta-administradora).
+
+Supabase Studio (ver tablas, usuarios): http://127.0.0.1:54323
+
+## Base de datos
+
+```bash
+npx supabase db reset       # recrea la base local desde las migraciones (borra datos locales)
+npx supabase test db        # pruebas pgTAP (RLS, restricciones, carta)
+```
+
+Las pruebas de integración del backend crean categorías `prueba-*` (inactivas
+al terminar) y pedidos de prueba en la base **local**. `db reset` los limpia.
+
+## Calidad
 
 ```bash
 npm run lint
 npm run typecheck
-npm test
+npm test                    # unitarias + integración (requiere Supabase local)
 npm run build
 ```
+
+Sin Supabase local, las pruebas de integración se omiten y solo corren las
+unitarias. Tras `supabase start`, espera unos segundos a que Auth esté listo.

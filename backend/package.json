@@ -8,8 +8,9 @@
     "build": "tsc -p tsconfig.build.json",
     "start": "node --env-file-if-exists=.env dist/server.js",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint src",
-    "test": "vitest run"
+    "lint": "oxlint src tests scripts",
+    "test": "vitest run",
+    "set-role": "tsx --env-file-if-exists=.env scripts/set-role.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
