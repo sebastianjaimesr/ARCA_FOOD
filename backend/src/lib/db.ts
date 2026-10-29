@@ -13,7 +13,12 @@ export const pool = new pg.Pool({
   // corta en vez de bloquear una conexión del pool.
   statement_timeout: 10_000,
   query_timeout: 15_000,
-  ssl: env.DATABASE_SSL ? { rejectUnauthorized: true } : undefined,
+  ssl:
+    env.DATABASE_SSL === 'verify-full'
+      ? { rejectUnauthorized: true, ca: env.DATABASE_CA_CERT }
+      : env.DATABASE_SSL === 'require'
+        ? { rejectUnauthorized: false }
+        : undefined,
 })
 
 pool.on('error', (err) => logger.error({ err }, 'Error inesperado en el pool de PostgreSQL'))

@@ -8,20 +8,37 @@ export const hasDb = Boolean(process.env.DATABASE_URL && process.env.SUPABASE_AN
 
 const suffix = () => randomBytes(4).toString('hex')
 
+// Supabase Auth local a veces tarda en responder justo después de arrancar
+// (o devuelve 429/5xx transitorios). Se reintenta unas veces y, si sigue
+// fallando, el error dice qué pasó en vez de omitir el archivo en silencio.
+async function withRetry<R extends { error: { message: string; status?: number } | null }>(label: string, fn: () => Promise<R>): Promise<R> {
+  let last = ''
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const response = await fn()
+    const { error } = response
+    if (!error) return response
+    last = `${error.status ?? '?'} ${error.message}`
+    const transient = !error.status || error.status === 429 || error.status >= 500
+    if (!transient) break
+    await new Promise((r) => setTimeout(r, 500 * attempt))
+  }
+  throw new Error(`Supabase Auth (${label}) falló: ${last}`)
+}
+
 // Crea un usuario de Auth con contraseña aleatoria (nunca se guarda) y devuelve
 // su token de sesión. role = null simula una cuenta sin acceso al panel.
 export async function createStaffSession(role: 'admin' | 'staff' | null) {
   const email = `prueba-${role ?? 'sinrol'}-${suffix()}@el-arca.test`
   const password = randomBytes(24).toString('base64url')
-  const { data, error } = await supabaseAdmin.auth.admin.createUser({ email, password, email_confirm: true })
-  if (error || !data.user) throw error ?? new Error('No se pudo crear el usuario de prueba')
+  const { data } = await withRetry('crear usuario', () => supabaseAdmin.auth.admin.createUser({ email, password, email_confirm: true }))
+  if (!data.user) throw new Error('No se pudo crear el usuario de prueba')
   if (role) await pool.query('update public.profiles set role = $2 where id = $1', [data.user.id, role])
 
   const anon = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!, {
     auth: { persistSession: false, autoRefreshToken: false },
   })
-  const session = await anon.auth.signInWithPassword({ email, password })
-  if (session.error || !session.data.session) throw session.error ?? new Error('No se pudo iniciar sesión')
+  const session = await withRetry('iniciar sesión', () => anon.auth.signInWithPassword({ email, password }))
+  if (!session.data.session) throw new Error('No se pudo iniciar sesión')
 
   return {
     id: data.user.id,

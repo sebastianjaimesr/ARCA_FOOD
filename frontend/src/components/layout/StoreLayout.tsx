@@ -62,7 +62,7 @@ function StoreHeader() {
           >
             <ShoppingBag className="size-4" aria-hidden />
             <span className="hidden sm:inline">Pedido</span>
-            <AnimatePresence mode="popLayout" initial={false}>
+            <AnimatePresence mode="wait" initial={false}>
               <m.span
                 key={count}
                 initial={{ scale: 0.4, opacity: 0 }}

@@ -1,0 +1,61 @@
+# Integración continua: se ejecuta en cada push y pull request. No publica nada.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  calidad:
+    name: Lint, tipos, pruebas unitarias y build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      # Sin base de datos: las pruebas de integración se omiten aquí y corren en el otro trabajo.
+      - run: npm test
+      - run: npm run build
+
+  integracion:
+    name: Base de datos e integración (Supabase local)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Levantar Supabase local (Docker del runner)
+        run: npx supabase start
+      - name: Escribir backend/.env con las claves locales de demostración
+        run: |
+          npx supabase status -o env > /tmp/sb.env
+          node -e "
+            const t = require('fs').readFileSync('/tmp/sb.env', 'utf8')
+            const g = (k) => (t.match(new RegExp('^' + k + '=\"?([^\"\\n]*)', 'm')) || [])[1] || ''
+            require('fs').writeFileSync('backend/.env', [
+              'DATABASE_URL=' + g('DB_URL'),
+              'SUPABASE_URL=' + g('API_URL'),
+              'SUPABASE_SERVICE_ROLE_KEY=' + g('SERVICE_ROLE_KEY'),
+              'SUPABASE_ANON_KEY=' + g('ANON_KEY'),
+            ].join('\n') + '\n')
+          "
+      - run: npx supabase test db
+      - run: npm test -w @el-arca/backend
+      - if: always()
+        run: npx supabase stop --no-backup

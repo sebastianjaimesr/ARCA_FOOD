@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
-    "lint": "oxlint src",
+    "lint": "oxlint src deploy",
     "test": "vitest run",
     "preview": "vite preview"
   },

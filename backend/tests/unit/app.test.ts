@@ -5,14 +5,17 @@ import { createApp } from '../../src/app.js'
 const app = createApp()
 
 describe('API base', () => {
-  it('GET /api/health responde ok', async () => {
+  it('GET /api/health informa el estado del servicio y de la base de datos', async () => {
+    // En pruebas unitarias la base puede estar apagada: 200 (ok) o 503 (degraded).
     const res = await request(app).get('/api/health')
-    expect(res.status).toBe(200)
-    expect(res.body).toMatchObject({ status: 'ok', service: 'el-arca-api' })
+    expect([200, 503]).toContain(res.status)
+    expect(res.body.service).toBe('el-arca-api')
+    expect(res.body.database).toBe(res.status === 200 ? 'ok' : 'unreachable')
+    expect(res.headers['cache-control']).toBe('no-store')
   })
 
   it('incluye cabeceras de seguridad y oculta Express', async () => {
-    const res = await request(app).get('/api/health')
+    const res = await request(app).get('/api/no-existe')
     expect(res.headers['x-content-type-options']).toBe('nosniff')
     expect(res.headers['x-powered-by']).toBeUndefined()
   })

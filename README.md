@@ -3,11 +3,11 @@
 Tienda en línea con pedidos por WhatsApp y panel administrativo para
 **El Arca**, Cl 103 #14-27, Bucaramanga.
 
-> Estado: **Fase 6 (panel administrativo)**. Tienda y panel completos: menú,
+> Estado: **las 8 fases construidas; aún no publicado**. Tienda y panel completos: menú,
 > carrito, pedidos por WhatsApp; en `/admin`: dashboard, pedidos y estados,
 > productos, catálogo (categorías y adicionales), inventario y configuración.
-> Validación completa (Fase 7, ver docs/validacion.md). Falta preparar la
-> publicación (Fase 8).
+> Validado (docs/validacion.md) y preparado para publicar (docs/despliegue.md);
+> no se considera en producción hasta completar la lista de esa guía.
 >
 > Imágenes: la carta no trae fotos de los productos. Mientras el restaurante no
 > cargue fotos reales, cada producto muestra una ilustración de línea de su
@@ -20,6 +20,7 @@ Tienda en línea con pedidos por WhatsApp y panel administrativo para
 - [API REST](docs/api.md)
 - [Seguridad y creación del primer administrador](docs/seguridad.md)
 - [Validación: pruebas, seguridad, accesibilidad y rendimiento](docs/validacion.md)
+- [Despliegue a producción y lista de verificación](docs/despliegue.md)
 
 ## Estructura
 
@@ -100,5 +101,17 @@ npm test                    # unitarias + integración (requiere Supabase local)
 npm run build
 ```
 
-Sin Supabase local, las pruebas de integración se omiten y solo corren las
-unitarias. Tras `supabase start`, espera unos segundos a que Auth esté listo.
+Sin `backend/.env`, las pruebas de integración se omiten y solo corren las
+unitarias. Si `backend/.env` existe pero Supabase no responde, se muestra un
+aviso y las de integración fallan. Tras `supabase start`, espera unos segundos a
+que Auth esté listo. El CI (`.github/workflows/ci.yml`) corre todo en cada push.
+
+## Publicar
+
+Ver [docs/despliegue.md](docs/despliegue.md): Supabase en la nube, API con
+`backend/Dockerfile`, sitio estático con cabeceras de seguridad generadas en el
+build, dominio, copias de seguridad y verificación con:
+
+```bash
+node scripts/smoke.mjs --api https://api.tudominio --site https://tudominio
+```
