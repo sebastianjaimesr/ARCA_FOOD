@@ -12,14 +12,17 @@ const cartLine = z.object({
 
 const fulfillment = z.enum(['DOMICILIO', 'RECOGIDA'])
 
+// Sin "fulfillment" la cotización solo valida productos y precios (lo usa la
+// página del carrito antes de que el cliente elija domicilio o recogida).
 export const quoteSchema = z.object({
-  fulfillment,
+  fulfillment: fulfillment.optional(),
   deliveryZoneId: uuid.nullish().transform((v) => v ?? null),
   items: z.array(cartLine).min(1, 'El carrito está vacío').max(30, 'Máximo 30 líneas por pedido'),
 })
 
 export const createOrderSchema = quoteSchema
   .extend({
+    fulfillment,
     customerName: z.string().trim().min(2, 'Escribe tu nombre').max(80),
     customerPhone: colombianPhone,
     deliveryAddress: optionalText(200),

@@ -3,9 +3,13 @@
 Tienda en línea con pedidos por WhatsApp y panel administrativo para
 **El Arca**, Cl 103 #14-27, Bucaramanga.
 
-> Estado: **Fase 3 (datos, seguridad y API)**. La base de datos, la carta real,
-> la autenticación y la API completa están listas y probadas. La tienda (menú,
-> carrito, WhatsApp) y las pantallas del panel se construyen en las fases 4 a 6.
+> Estado: **Fase 4 (tienda pública)**. Portada, menú con búsqueda y categorías,
+> personalización de productos y carrito validado con el backend. El formulario
+> de pedido con WhatsApp (Fase 5) y las pantallas del panel (Fase 6) siguen.
+>
+> Imágenes: la carta no trae fotos de los productos. Mientras el restaurante no
+> cargue fotos reales, cada producto muestra una ilustración de línea de su
+> categoría (no se usan fotos genéricas que parezcan del restaurante).
 
 ## Documentación
 

@@ -225,7 +225,11 @@ describe.skipIf(!hasDb)('panel administrativo (integración)', () => {
       expect(after.received.total - before.received.total).toBe(3)
       expect(after.received.byStatus.CANCELADO - before.received.byStatus.CANCELADO).toBe(1)
       expect(after.timezone).toBe('America/Bogota')
-      expect(after.topProducts.some((p: { productId: string }) => p.productId === catalog.burgerId)).toBe(true)
+      // El ranking acumula las corridas anteriores del día: se valida su forma y orden.
+      const quantities = after.topProducts.map((p: { quantity: number }) => p.quantity)
+      expect(after.topProducts.length).toBeGreaterThan(0)
+      expect(after.topProducts.length).toBeLessThanOrEqual(5)
+      expect(quantities).toEqual([...quantities].sort((a, b) => b - a))
     })
 
     it('rechaza rangos inválidos', async () => {

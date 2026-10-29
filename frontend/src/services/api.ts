@@ -36,6 +36,10 @@ export async function apiFetch<T>(path: string, { token, headers, ...init }: Api
   const body = await res.json().catch(() => null)
   if (!res.ok) {
     const error = body?.error
+    if (!error && res.status >= 500) {
+      // Respuesta sin el formato de la API: el servidor está caído o reiniciando.
+      throw new ApiError(res.status, 'SERVER_UNAVAILABLE', 'El servidor no está disponible en este momento. Intenta de nuevo en unos segundos.')
+    }
     throw new ApiError(res.status, error?.code ?? 'UNKNOWN', error?.message ?? 'Ocurrió un error inesperado', error?.details)
   }
   return body as T

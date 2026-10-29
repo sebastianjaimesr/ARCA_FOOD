@@ -85,6 +85,17 @@ describe.skipIf(!hasDb)('pedidos (integración)', () => {
     expect(res.body.error.code).toBe('IDEMPOTENCY_CONFLICT')
   })
 
+  it('cotiza el carrito sin modalidad (solo productos) y con precios vigentes', async () => {
+    const res = await request(app)
+      .post('/api/cart/quote')
+      .send({ items: [{ productId: catalog.hotDogId, variantId: catalog.zenuId, optionIds: [catalog.quesoId], quantity: 2 }] })
+    expect(res.status).toBe(200)
+    expect(res.body).toMatchObject({ subtotal: '34000.00', deliveryFee: null, total: '34000.00' })
+
+    const noFulfillment = await post({ ...orderBody([{ productId: catalog.burgerId, quantity: 1 }]), fulfillment: undefined })
+    expect(noFulfillment.status).toBe(400)
+  })
+
   it('exige la cabecera Idempotency-Key', async () => {
     const res = await request(app).post('/api/orders').send(orderBody([{ productId: catalog.burgerId, quantity: 1 }]))
     expect(res.status).toBe(400)

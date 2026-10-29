@@ -19,12 +19,14 @@ import { getSettings, listDeliveryZones } from '../repositories/settings.reposit
 import { deductStockForOrder, revertStockForOrder } from './inventory.service.js'
 
 export type QuoteInput = {
-  fulfillment: Fulfillment
+  // Sin modalidad solo se validan productos y precios (carrito).
+  fulfillment?: Fulfillment
   deliveryZoneId?: string | null
   items: CartLineInput[]
 }
 
 export type CreateOrderInput = QuoteInput & {
+  fulfillment: Fulfillment
   customerName: string
   customerPhone: string
   deliveryAddress?: string | null
@@ -36,7 +38,7 @@ export type CreateOrderInput = QuoteInput & {
 }
 
 // Valida modalidad, horario y zona de domicilio según la configuración real.
-async function resolveDelivery(input: QuoteInput, now = new Date()): Promise<DeliveryQuote> {
+async function resolveDelivery(input: QuoteInput & { fulfillment: Fulfillment }, now = new Date()): Promise<DeliveryQuote> {
   const settings = await getSettings(pool)
   if (!settings.acceptingOrders) {
     throw new HttpError(409, 'STORE_CLOSED', 'En este momento no estamos recibiendo pedidos en línea')
@@ -62,7 +64,7 @@ async function resolveDelivery(input: QuoteInput, now = new Date()): Promise<Del
 }
 
 export async function quoteCart(input: QuoteInput): Promise<Quote> {
-  const delivery = await resolveDelivery(input)
+  const delivery = input.fulfillment ? await resolveDelivery({ ...input, fulfillment: input.fulfillment }) : null
   const catalog = await loadCatalogForCart(
     pool,
     [...new Set(input.items.map((i) => i.productId))],

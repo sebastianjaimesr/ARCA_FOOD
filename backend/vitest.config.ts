@@ -9,6 +9,7 @@ export default defineConfig({
     env: { ...loadEnv('development', process.cwd(), ''), NODE_ENV: 'test' },
     // Las pruebas de integración comparten la base de datos: se ejecutan en serie.
     fileParallelism: false,
+    globalSetup: ['tests/integration/global-teardown.ts'],
     testTimeout: 20_000,
     hookTimeout: 30_000,
   },
