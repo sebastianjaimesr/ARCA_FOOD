@@ -27,6 +27,10 @@ const envSchema = z
       .enum(['true', 'false'])
       .default('false')
       .transform((value) => value === 'true'),
+    // Cuántos proxies hay delante del servidor (el del hosting). Con 0, la IP
+    // del cliente es la de la conexión y X-Forwarded-For se ignora; así nadie
+    // puede falsearla para saltarse el límite de solicitudes.
+    TRUST_PROXY: z.coerce.number().int().min(0).max(5).default(0),
   })
   .superRefine((value, ctx) => {
     // En las pruebas unitarias no hace falta base de datos.

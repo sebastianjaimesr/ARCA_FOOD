@@ -1,3 +1,4 @@
+import compression from 'compression'
 import cors from 'cors'
 import express from 'express'
 import helmet from 'helmet'
@@ -12,7 +13,8 @@ export function createApp() {
   const app = express()
 
   app.disable('x-powered-by')
-  app.set('trust proxy', 1) // Detrás del proxy del hosting, para leer la IP real en el rate limit.
+  // Solo se confía en X-Forwarded-For si hay proxies configurados (TRUST_PROXY).
+  app.set('trust proxy', env.TRUST_PROXY)
   app.use(helmet())
   app.use(
     cors({
@@ -21,6 +23,8 @@ export function createApp() {
       allowedHeaders: ['Content-Type', 'Authorization', 'Idempotency-Key'],
     }),
   )
+  // El catálogo completo pesa ~60 KB en JSON y ~8 KB comprimido.
+  app.use(compression())
   app.use(express.json({ limit: '100kb' }))
   app.use(pinoHttp({ logger }))
 

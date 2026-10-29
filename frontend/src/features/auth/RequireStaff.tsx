@@ -22,7 +22,7 @@ export function RequireStaff({ children }: { children: ReactNode }) {
   }
   if (state.status === 'forbidden' || state.status === 'error') {
     return (
-      <div className="grid min-h-dvh place-items-center bg-ink-950 px-4">
+      <main className="grid min-h-dvh place-items-center bg-ink-950 px-4">
         <EmptyState icon={ShieldAlert} title={state.status === 'forbidden' ? 'Sin acceso al panel' : 'No pudimos verificar tu sesión'}>
           <p>
             {state.status === 'forbidden'
@@ -33,7 +33,7 @@ export function RequireStaff({ children }: { children: ReactNode }) {
             Cerrar sesión
           </button>
         </EmptyState>
-      </div>
+      </main>
     )
   }
   return <>{children}</>

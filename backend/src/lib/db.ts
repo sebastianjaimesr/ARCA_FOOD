@@ -8,6 +8,11 @@ export const pool = new pg.Pool({
   connectionString: env.DATABASE_URL,
   max: 10,
   idleTimeoutMillis: 30_000,
+  connectionTimeoutMillis: 10_000,
+  // Ninguna consulta de la aplicación debería tardar más de 10 s; si pasa, se
+  // corta en vez de bloquear una conexión del pool.
+  statement_timeout: 10_000,
+  query_timeout: 15_000,
   ssl: env.DATABASE_SSL ? { rejectUnauthorized: true } : undefined,
 })
 

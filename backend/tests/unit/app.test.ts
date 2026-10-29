@@ -39,6 +39,15 @@ describe('API base', () => {
     expect(res.status).toBe(413)
   })
 
+  it('las respuestas del panel nunca se guardan en caché', async () => {
+    const admin = await request(app).get('/api/admin/me')
+    expect(admin.headers['cache-control']).toBe('no-store')
+  })
+
+  it('por defecto ignora X-Forwarded-For (no se puede falsear la IP)', () => {
+    expect(app.get('trust proxy')).toBe(0)
+  })
+
   it('CORS solo permite orígenes configurados', async () => {
     const allowed = await request(app).get('/api/health').set('Origin', 'http://localhost:5173')
     expect(allowed.headers['access-control-allow-origin']).toBe('http://localhost:5173')

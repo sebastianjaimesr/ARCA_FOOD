@@ -71,7 +71,7 @@ function ProductForm({
         </div>
 
         <div className="space-y-6 p-5">
-          <header>
+          <div>
             <p className="text-xs font-semibold tracking-[0.18em] text-brand-500 uppercase">{product.category.name}</p>
             <h2 id="product-sheet-title" className="mt-1 text-2xl font-black text-cream-50 uppercase">
               {product.name}
@@ -82,7 +82,7 @@ function ProductForm({
                 Agotado por ahora
               </p>
             )}
-          </header>
+          </div>
 
           {product.variants.length > 0 && (
             <fieldset>
@@ -173,7 +173,7 @@ function ProductForm({
         </div>
       </div>
 
-      <footer className="flex items-center gap-3 border-t border-ink-700 bg-ink-900 p-4">
+      <div className="flex items-center gap-3 border-t border-ink-700 bg-ink-900 p-4">
         <QuantityStepper value={quantity} onChange={(v) => setQuantity(clampQuantity(v))} label="Cantidad" />
         <button
           type="submit"
@@ -186,7 +186,7 @@ function ProductForm({
           </span>
           {product.available && <span>{formatCOP(total)}</span>}
         </button>
-      </footer>
+      </div>
     </form>
   )
 }

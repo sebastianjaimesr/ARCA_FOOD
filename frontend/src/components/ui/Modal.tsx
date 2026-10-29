@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useEffect, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
@@ -55,14 +55,14 @@ export function Modal({ open, onClose, labelledBy, children }: ModalProps) {
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6">
-          <motion.div
+          <m.div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
-          <motion.div
+          <m.div
             ref={panelRef}
             role="dialog"
             aria-modal="true"
@@ -82,7 +82,7 @@ export function Modal({ open, onClose, labelledBy, children }: ModalProps) {
               <X className="size-5" aria-hidden />
             </button>
             {children}
-          </motion.div>
+          </m.div>
         </div>
       )}
     </AnimatePresence>,

@@ -6,7 +6,8 @@ Tienda en línea con pedidos por WhatsApp y panel administrativo para
 > Estado: **Fase 6 (panel administrativo)**. Tienda y panel completos: menú,
 > carrito, pedidos por WhatsApp; en `/admin`: dashboard, pedidos y estados,
 > productos, catálogo (categorías y adicionales), inventario y configuración.
-> Falta la validación final y la preparación para publicar (fases 7 y 8).
+> Validación completa (Fase 7, ver docs/validacion.md). Falta preparar la
+> publicación (Fase 8).
 >
 > Imágenes: la carta no trae fotos de los productos. Mientras el restaurante no
 > cargue fotos reales, cada producto muestra una ilustración de línea de su
@@ -18,6 +19,7 @@ Tienda en línea con pedidos por WhatsApp y panel administrativo para
 - [Reglas de negocio](docs/reglas-de-negocio.md): precios, estados, inventario, estadísticas
 - [API REST](docs/api.md)
 - [Seguridad y creación del primer administrador](docs/seguridad.md)
+- [Validación: pruebas, seguridad, accesibilidad y rendimiento](docs/validacion.md)
 
 ## Estructura
 

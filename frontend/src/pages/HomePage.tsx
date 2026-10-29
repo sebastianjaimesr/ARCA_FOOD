@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowRight, Clock, MapPin, MessageCircle, Send, ShoppingBag, UtensilsCrossed } from 'lucide-react'
 import { Link } from 'react-router'
 import { CategoryArt } from '../components/brand/CategoryArt'
@@ -31,12 +31,12 @@ export function HomePage() {
 
       {/* Categorías reales de la carta */}
       <section className="mx-auto max-w-6xl px-4 py-14" aria-labelledby="home-categories">
-        <motion.h2 {...fadeUp} id="home-categories" className="font-script text-4xl text-brand-500 sm:text-5xl">
+        <m.h2 {...fadeUp} id="home-categories" className="font-script text-4xl text-brand-500 sm:text-5xl">
           Nuestra carta
-        </motion.h2>
+        </m.h2>
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {(categories.data ?? []).map((c, i) => (
-            <motion.div key={c.id} {...fadeUp} transition={{ duration: 0.4, delay: i * 0.04 }}>
+            <m.div key={c.id} {...fadeUp} transition={{ duration: 0.4, delay: i * 0.04 }}>
               <Link
                 to={`/menu?categoria=${c.slug}`}
                 className="group flex h-full flex-col items-center rounded-2xl border border-ink-700 bg-ink-800 px-3 pt-5 pb-4 text-center transition hover:-translate-y-0.5 hover:border-brand-500/60"
@@ -45,7 +45,7 @@ export function HomePage() {
                 <span className="mt-3 font-extrabold text-cream-50 uppercase">{c.name}</span>
                 {c.description && <span className="mt-1 text-[11px] leading-tight text-cream-300">{c.description}</span>}
               </Link>
-            </motion.div>
+            </m.div>
           ))}
           {categories.status === 'loading' &&
             Array.from({ length: 8 }, (_, i) => <div key={i} className="h-36 animate-pulse rounded-2xl bg-ink-800" />)}
@@ -56,9 +56,9 @@ export function HomePage() {
         <section className="border-y border-ink-700 bg-ink-950/60" aria-labelledby="home-featured">
           <div className="mx-auto max-w-6xl px-4 py-14">
             <div className="flex items-end justify-between gap-4">
-              <motion.h2 {...fadeUp} id="home-featured" className="font-script text-4xl text-brand-500 sm:text-5xl">
+              <m.h2 {...fadeUp} id="home-featured" className="font-script text-4xl text-brand-500 sm:text-5xl">
                 Destacados
-              </motion.h2>
+              </m.h2>
               <Link to="/menu" className="inline-flex items-center gap-1 text-sm font-semibold text-cream-100 hover:text-brand-400">
                 Ver todo <ArrowRight className="size-4" aria-hidden />
               </Link>
@@ -76,9 +76,9 @@ export function HomePage() {
 
       {s && (
         <section className="mx-auto max-w-6xl px-4 pb-16" aria-labelledby="home-visit">
-          <motion.h2 {...fadeUp} id="home-visit" className="font-script text-4xl text-brand-500 sm:text-5xl">
+          <m.h2 {...fadeUp} id="home-visit" className="font-script text-4xl text-brand-500 sm:text-5xl">
             Encuéntranos
-          </motion.h2>
+          </m.h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <InfoCard icon={MapPin} title="Dirección">
               {fullAddress(s) ? (
@@ -132,7 +132,7 @@ function Hero({ acceptingOrders, whatsapp }: { acceptingOrders: boolean; whatsap
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_50%_10%,rgba(255,199,0,0.2),transparent_70%)]"
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-4 pt-10 pb-14 sm:pt-16 md:grid-cols-[1.1fr_0.9fr]">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -169,9 +169,9 @@ function Hero({ acceptingOrders, whatsapp }: { acceptingOrders: boolean; whatsap
               </a>
             )}
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.img
+        <m.img
           src="/brand/logo-el-arca-512.webp"
           alt="Logo de El Arca Comidas Rápidas"
           width={512}
@@ -196,12 +196,12 @@ const STEPS = [
 function HowToOrder() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-14" aria-labelledby="home-how">
-      <motion.h2 {...fadeUp} id="home-how" className="font-script text-4xl text-brand-500 sm:text-5xl">
+      <m.h2 {...fadeUp} id="home-how" className="font-script text-4xl text-brand-500 sm:text-5xl">
         Así de fácil
-      </motion.h2>
+      </m.h2>
       <ol className="mt-6 grid gap-3 sm:grid-cols-3">
         {STEPS.map(({ icon: Icon, title, text }, i) => (
-          <motion.li
+          <m.li
             key={title}
             {...fadeUp}
             transition={{ duration: 0.4, delay: i * 0.08 }}
@@ -211,7 +211,7 @@ function HowToOrder() {
             <Icon className="size-7 text-brand-500" aria-hidden />
             <h3 className="mt-3 font-extrabold text-cream-50">{title}</h3>
             <p className="mt-1 text-sm text-cream-300">{text}</p>
-          </motion.li>
+          </m.li>
         ))}
       </ol>
     </section>

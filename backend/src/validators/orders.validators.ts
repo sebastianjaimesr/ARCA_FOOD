@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { ORDER_STATUSES } from '../domain/order-status.js'
-import { colombianPhone, isoDate, money, optionalText, uuid } from './common.js'
+import { colombianPhone, isoDate, money, optionalText, singleLineText, uuid } from './common.js'
 
 const cartLine = z.object({
   productId: uuid,
@@ -23,7 +23,7 @@ export const quoteSchema = z.object({
 export const createOrderSchema = quoteSchema
   .extend({
     fulfillment,
-    customerName: z.string().trim().min(2, 'Escribe tu nombre').max(80),
+    customerName: singleLineText(2, 80, 'Escribe tu nombre'),
     customerPhone: colombianPhone,
     deliveryAddress: optionalText(200),
     deliveryReference: optionalText(200),

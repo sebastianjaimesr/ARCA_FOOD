@@ -9,6 +9,11 @@ import { adminLimiter } from '../middlewares/rate-limit.js'
 //          catálogo, precios ni configuración.
 export const adminRouter = Router()
 
+// Respuestas del panel: datos personales y operativos, nunca en caché.
+adminRouter.use((_req, res, next) => {
+  res.set('Cache-Control', 'no-store')
+  next()
+})
 adminRouter.use(adminLimiter, requireAuth)
 
 const staff = requireRole('admin', 'staff')

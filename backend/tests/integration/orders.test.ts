@@ -96,6 +96,14 @@ describe.skipIf(!hasDb)('pedidos (integración)', () => {
     expect(noFulfillment.status).toBe(400)
   })
 
+  it('el catálogo se cachea poco tiempo y se comprime; los pedidos no se cachean', async () => {
+    const catalogRes = await request(app).get('/api/products').set('Accept-Encoding', 'gzip')
+    expect(catalogRes.headers['cache-control']).toContain('max-age=30')
+    expect(catalogRes.headers['content-encoding']).toBe('gzip')
+    const orderRes = await post(orderBody([{ productId: catalog.burgerId, quantity: 1 }]))
+    expect(orderRes.headers['cache-control']).toBe('no-store')
+  })
+
   it('exige la cabecera Idempotency-Key', async () => {
     const res = await request(app).post('/api/orders').send(orderBody([{ productId: catalog.burgerId, quantity: 1 }]))
     expect(res.status).toBe(400)

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { AlertTriangle, ArrowLeft, Info, LoaderCircle, Pencil, RefreshCw, ShoppingBag, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router'
@@ -23,6 +23,7 @@ export function CartPage() {
   if (cart.lines.length === 0) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16">
+        <h1 className="sr-only">Tu pedido</h1>
         <EmptyState icon={ShoppingBag} title="Tu pedido está vacío">
           <p>Agrega productos desde el menú para empezar.</p>
           <Link
@@ -66,12 +67,12 @@ export function CartPage() {
             </Notice>
           )}
 
+          <h2 className="sr-only">Productos</h2>
           <ul className="space-y-3">
             <AnimatePresence initial={false}>
               {cart.lines.map((line) => (
-                <motion.li
+                <m.li
                   key={line.lineId}
-                  layout
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, x: -40, transition: { duration: 0.2 } }}
@@ -84,7 +85,7 @@ export function CartPage() {
                     onQuantity={(q) => cart.setQuantity(line.lineId, q)}
                     onRemove={() => cart.remove(line.lineId)}
                   />
-                </motion.li>
+                </m.li>
               ))}
             </AnimatePresence>
           </ul>

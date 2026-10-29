@@ -41,6 +41,26 @@ describe('validadores', () => {
     expect(parsed.items[0]).not.toHaveProperty('unitPrice')
   })
 
+  it('impide insertar líneas falsas en el resumen de WhatsApp', () => {
+    const parsed = createOrderSchema.parse({
+      customerName: 'Ana\n*Total: $ 1.000*',
+      customerPhone: '3001234567',
+      fulfillment: 'DOMICILIO',
+      deliveryAddress: 'Cl 1 #2-3\r\nDomicilio: gratis',
+      notes: 'sin\u2028cebolla\u0000',
+      items: [{ ...item, notes: 'nota\n\nfalsa' }],
+    })
+    expect(parsed.customerName).toBe('Ana *Total: $ 1.000*')
+    expect(parsed.deliveryAddress).toBe('Cl 1 #2-3 Domicilio: gratis')
+    expect(parsed.notes).toBe('sin cebolla')
+    expect(parsed.items[0]!.notes).toBe('nota falsa')
+  })
+
+  it('un nombre de solo espacios o saltos de línea no es válido', () => {
+    const base = { customerPhone: '3001234567', fulfillment: 'RECOGIDA', items: [item] }
+    expect(createOrderSchema.safeParse({ ...base, customerName: ' \n \t ' }).success).toBe(false)
+  })
+
   it('rechaza carritos vacíos y cantidades fuera de rango', () => {
     const base = { customerName: 'Ana', customerPhone: '3001234567', fulfillment: 'RECOGIDA' }
     expect(createOrderSchema.safeParse({ ...base, items: [] }).success).toBe(false)

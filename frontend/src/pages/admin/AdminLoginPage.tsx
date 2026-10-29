@@ -41,7 +41,7 @@ export function AdminLoginPage() {
   })
 
   return (
-    <div className="grid min-h-dvh place-items-center bg-ink-950 px-4">
+    <main className="grid min-h-dvh place-items-center bg-ink-950 px-4">
       <form onSubmit={onSubmit} noValidate className="w-full max-w-sm rounded-2xl border border-ink-700 bg-ink-900 p-7 shadow-2xl">
         <p className="font-script text-4xl text-brand-500">El Arca</p>
         <h1 className="mt-1 text-lg font-bold text-cream-50">Panel administrativo</h1>
@@ -85,6 +85,6 @@ export function AdminLoginPage() {
           Ingresar
         </button>
       </form>
-    </div>
+    </main>
   )
 }

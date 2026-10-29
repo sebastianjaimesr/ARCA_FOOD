@@ -30,11 +30,27 @@ export const colombianPhone = z
   })
   .refine((digits) => /^(3\d{9}|60\d{8})$/.test(digits), 'Escribe un número de 10 dígitos, por ejemplo 300 123 4567')
 
+// Texto libre del cliente en una sola línea: sin saltos de línea ni caracteres
+// de control. Evita que alguien inserte líneas falsas (ej. "*Total: $1.000*")
+// en el resumen que el restaurante lee por WhatsApp.
+export const toSingleLine = (value: string) =>
+  value
+    // eslint-disable-next-line no-control-regex
+    .replace(/[\u0000-\u001f\u007f-\u009f\u2028\u2029]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+export const singleLineText = (min: number, max: number, message = `Mínimo ${min} caracteres`) =>
+  z
+    .string()
+    .transform(toSingleLine)
+    .pipe(z.string().min(min, message).max(max, `Máximo ${max} caracteres`))
+
 export const optionalText = (max: number) =>
   z
     .string()
-    .trim()
-    .max(max, `Máximo ${max} caracteres`)
+    .transform(toSingleLine)
+    .pipe(z.string().max(max, `Máximo ${max} caracteres`))
     .nullish()
     .transform((value) => (value ? value : null))
 

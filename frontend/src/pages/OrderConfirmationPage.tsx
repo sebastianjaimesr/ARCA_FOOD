@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Check, ClipboardCopy, ExternalLink, MessageCircle, Search } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router'
@@ -47,9 +47,9 @@ export function OrderConfirmationPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 pt-10 pb-16">
-      <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mx-auto grid size-16 place-items-center rounded-full bg-brand-500 text-ink-900">
+      <m.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mx-auto grid size-16 place-items-center rounded-full bg-brand-500 text-ink-900">
         <Check className="size-9" strokeWidth={3} aria-hidden />
-      </motion.div>
+      </m.div>
       <h1 className="mt-5 text-center text-3xl font-black text-cream-50">Pedido registrado</h1>
       <p className="mt-2 text-center text-cream-300">
         Tu código es <strong className="text-2xl font-black tracking-wide text-brand-400">{order.code}</strong>

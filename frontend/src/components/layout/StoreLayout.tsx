@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { AtSign, CheckCircle2, Clock, MapPin, MessageCircle, ShoppingBag } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, ScrollRestoration, useLocation } from 'react-router'
@@ -63,7 +63,7 @@ function StoreHeader() {
             <ShoppingBag className="size-4" aria-hidden />
             <span className="hidden sm:inline">Pedido</span>
             <AnimatePresence mode="popLayout" initial={false}>
-              <motion.span
+              <m.span
                 key={count}
                 initial={{ scale: 0.4, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -71,7 +71,7 @@ function StoreHeader() {
                 className="grid min-w-5 place-items-center rounded-full bg-ink-900 px-1.5 text-xs text-brand-400 tabular-nums"
               >
                 {count}
-              </motion.span>
+              </m.span>
             </AnimatePresence>
           </Link>
         </nav>
@@ -90,7 +90,7 @@ function FloatingCartBar() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
+        <m.div
           initial={{ y: 80 }}
           animate={{ y: 0 }}
           exit={{ y: 80 }}
@@ -107,7 +107,7 @@ function FloatingCartBar() {
             </span>
             <span>{formatCOP(subtotal)}</span>
           </Link>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   )
@@ -129,7 +129,7 @@ function AddedToast() {
     <div aria-live="polite" className="pointer-events-none fixed inset-x-0 top-20 z-50 flex justify-center px-4">
       <AnimatePresence>
         {shown && (
-          <motion.p
+          <m.p
             key={shown.at}
             initial={{ y: -16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -138,7 +138,7 @@ function AddedToast() {
           >
             <CheckCircle2 className="size-4 text-brand-500" aria-hidden />
             {shown.name} agregado al pedido
-          </motion.p>
+          </m.p>
         )}
       </AnimatePresence>
     </div>

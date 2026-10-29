@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Plus } from 'lucide-react'
 import { formatCOP } from '../../lib/format'
 import type { Product } from '../../types/catalog'
@@ -11,8 +11,7 @@ export function ProductCard({ product, onOpen }: ProductCardProps) {
   const hasVariants = product.variants.length > 0
 
   return (
-    <motion.article
-      layout="position"
+    <m.article
       // Animación al montar (no "al entrar en pantalla"): un producto nunca
       // debe quedar invisible si el observador de visibilidad no se dispara.
       initial={{ opacity: 0, y: 8 }}
@@ -55,6 +54,6 @@ export function ProductCard({ product, onOpen }: ProductCardProps) {
           )}
         </div>
       </div>
-    </motion.article>
+    </m.article>
   )
 }

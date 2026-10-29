@@ -37,6 +37,15 @@ Navegador ──► Express (/api) ──► PostgreSQL (rol de servidor)
 | Logs con secretos | Se redactan `Authorization` y cookies; nunca se registran datos del cliente |
 | Consulta de pedidos | Requiere código **y** teléfono; no devuelve la dirección |
 | Auditoría | `audit_log` registra quién cambió precios, productos, estados, inventario y configuración |
+| IP falsificada para saltar el límite | `TRUST_PROXY` (0 por defecto): solo se confía en `X-Forwarded-For` si hay un proxy real delante |
+| Líneas falsas en el mensaje de WhatsApp | Nombre, dirección, referencia y notas se guardan en una sola línea, sin caracteres de control |
+| Consultas colgadas | `statement_timeout` de 10 s en cada conexión a PostgreSQL |
+| Datos personales en cachés | `Cache-Control: no-store` en pedidos, cotizaciones y todo `/api/admin` |
+| Terceros que reciben la IP del cliente | Tipografías servidas desde el propio sitio (sin Google Fonts) |
+
+> El resumen de WhatsApp lo escribe el cliente desde su teléfono. El restaurante
+> debe confiar en el **panel** (mismo código `ARC-…`), donde los importes los
+> calculó el servidor, y no solo en el texto del mensaje.
 
 ## Crear la primera cuenta administradora
 
