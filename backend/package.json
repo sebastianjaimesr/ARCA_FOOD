@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "oxlint src tests scripts",
     "test": "vitest run",
-    "set-role": "tsx --env-file-if-exists=.env scripts/set-role.ts"
+    "set-role": "tsx --env-file-if-exists=.env scripts/set-role.ts",
+    "dev-admin": "tsx --env-file-if-exists=.env scripts/dev-admin.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

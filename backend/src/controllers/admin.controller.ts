@@ -3,7 +3,8 @@ import { audit } from '../lib/audit.js'
 import { pool } from '../lib/db.js'
 import { HttpError } from '../lib/http-error.js'
 import { listInventory, listMovements } from '../repositories/inventory.repository.js'
-import { findOrderById, listOrders } from '../repositories/orders.repository.js'
+import { allowedTransitions } from '../domain/order-status.js'
+import { findOrderById, listOrders, type OrderDetail } from '../repositories/orders.repository.js'
 import {
   findAdminCategory,
   findAdminProduct,
@@ -79,13 +80,20 @@ export const getOrders: RequestHandler = async (req, res) => {
 export const getOrder: RequestHandler = async (req, res) => {
   const order = await findOrderById(pool, idOf(req), true)
   if (!order) throw new HttpError(404, 'ORDER_NOT_FOUND', 'El pedido no existe')
-  res.json(order)
+  res.json(withTransitions(order))
 }
 
 export const patchOrderStatus: RequestHandler = async (req, res) => {
   const { status, note } = changeStatusSchema.parse(req.body)
-  res.json(await changeOrderStatus(idOf(req), status, actor(req), note))
+  res.json(withTransitions(await changeOrderStatus(idOf(req), status, actor(req), note)))
 }
+
+// El panel muestra solo los botones de los estados permitidos; la regla vive
+// únicamente aquí (domain/order-status.ts).
+const withTransitions = (order: OrderDetail) => ({
+  ...order,
+  allowedTransitions: allowedTransitions(order.status, order.fulfillment),
+})
 
 // --- Productos ---------------------------------------------------------------
 export const getAdminProducts: RequestHandler = async (req, res) => {

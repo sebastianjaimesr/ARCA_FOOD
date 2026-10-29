@@ -41,29 +41,33 @@ select throws_ok(
 );
 reset role;
 
--- 6-9. La carta 2025 quedó cargada completa. Se cuenta solo la carta real:
--- las pruebas de integración del backend crean categorías "prueba-*".
+-- 6-9. La carta 2025 quedó cargada completa. Se verifica "al menos" lo que
+-- trae la migración: el restaurante puede agregar productos desde el panel y
+-- las pruebas de integración crean categorías "prueba-*".
 create temp table carta_categories as
   select id from public.categories
   where slug in ('hamburguesas', 'hot-dogs', 'papas-locas', 'desgranados', 'salchipapas', 'choripapas', 'carnes', 'bebidas');
 
-select is((select count(*)::int from carta_categories), 8, '8 categorías');
-select is(
+select is((select count(*)::int from carta_categories), 8, '8 categorías de la carta');
+select cmp_ok(
   (select count(*)::int from public.products where category_id in (select id from carta_categories)),
+  '>=',
   43,
-  '43 productos'
+  'al menos los 43 productos de la carta'
 );
-select is(
+select cmp_ok(
   (select count(*)::int from public.product_variants v
    join public.products p on p.id = v.product_id
    where p.category_id in (select id from carta_categories) and v.name in ('Salchicha Zenú', 'Salchicha Americana')),
+  '>=',
   14,
-  '14 variantes Zenú/Americana'
+  'al menos las 14 variantes Zenú/Americana'
 );
-select is(
+select cmp_ok(
   (select count(*)::int from public.options o join public.option_groups g on g.id = o.group_id where g.name = 'Adicionales'),
+  '>=',
   14,
-  '14 adicionales'
+  'al menos los 14 adicionales'
 );
 
 -- 10. Precios exactos de muestra.

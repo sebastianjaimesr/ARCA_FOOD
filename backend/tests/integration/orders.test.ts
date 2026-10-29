@@ -169,6 +169,9 @@ describe.skipIf(!hasDb)('pedidos (integración)', () => {
     for (const status of ['CONFIRMADO', 'EN_PREPARACION', 'LISTO']) {
       expect((await setStatus(id, status)).status).toBe(200)
     }
+    const ready = await request(app).get(`/api/admin/orders/${id}`).set('Authorization', `Bearer ${admin.token}`)
+    expect(ready.body.allowedTransitions).toEqual(['ENTREGADO', 'CANCELADO'])
+
     const invalid = await setStatus(id, 'EN_CAMINO')
     expect(invalid.status).toBe(409)
     expect(invalid.body.error.code).toBe('INVALID_TRANSITION')

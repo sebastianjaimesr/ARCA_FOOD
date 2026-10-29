@@ -42,6 +42,26 @@ export const router = createBrowserRouter([
             index: true,
             lazy: async () => ({ Component: (await import('../pages/admin/AdminDashboardPage')).AdminDashboardPage }),
           },
+          { path: 'pedidos', lazy: async () => ({ Component: (await import('../pages/admin/AdminOrdersPage')).AdminOrdersPage }) },
+          {
+            path: 'pedidos/:id',
+            lazy: async () => ({ Component: (await import('../pages/admin/AdminOrderDetailPage')).AdminOrderDetailPage }),
+          },
+          { path: 'productos', lazy: async () => ({ Component: (await import('../pages/admin/AdminProductsPage')).AdminProductsPage }) },
+          {
+            path: 'productos/nuevo',
+            lazy: async () => ({ Component: (await import('../pages/admin/AdminProductFormPage')).AdminProductFormPage }),
+          },
+          {
+            path: 'productos/:id',
+            lazy: async () => ({ Component: (await import('../pages/admin/AdminProductFormPage')).AdminProductFormPage }),
+          },
+          { path: 'catalogo', lazy: async () => ({ Component: (await import('../pages/admin/AdminCatalogPage')).AdminCatalogPage }) },
+          { path: 'inventario', lazy: async () => ({ Component: (await import('../pages/admin/AdminInventoryPage')).AdminInventoryPage }) },
+          {
+            path: 'configuracion',
+            lazy: async () => ({ Component: (await import('../pages/admin/AdminSettingsPage')).AdminSettingsPage }),
+          },
         ],
       },
     ],

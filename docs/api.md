@@ -100,8 +100,8 @@ cuenta con rol y activa. Límite 300/min. Roles:
 | `GET /me` | staff | Perfil de la sesión |
 | `GET /dashboard?range=day\|week\|month` | staff | Métricas (ver reglas de negocio) |
 | `GET /orders?status=A,B&from=AAAA-MM-DD&to=…&q=&page=&pageSize=` | staff | Lista paginada; fechas en hora de Bogotá; `q` busca código, nombre o teléfono |
-| `GET /orders/:id` | staff | Detalle con historial |
-| `PATCH /orders/:id/status` | staff | `{ status, note }`. `409 INVALID_TRANSITION` (con `details.allowed`), `409 INSUFFICIENT_STOCK` al confirmar, `422 CANCEL_REASON_REQUIRED` |
+| `GET /orders/:id` | staff | Detalle con historial y `allowedTransitions` (los estados a los que puede pasar ahora) |
+| `PATCH /orders/:id/status` | staff | `{ status, note }` → pedido actualizado con `allowedTransitions`. `409 INVALID_TRANSITION` (con `details.allowed`), `409 INSUFFICIENT_STOCK` al confirmar, `422 CANCEL_REASON_REQUIRED` |
 | `GET /products?q=&categoryId=&status=active\|inactive\|all` | staff | Incluye stock, variantes e inactivos |
 | `GET /products/:id` | staff | |
 | `POST /products` | admin | Crea (slug automático si no se envía) con `variants` y `optionGroupIds` |

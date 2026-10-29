@@ -3,9 +3,10 @@
 Tienda en línea con pedidos por WhatsApp y panel administrativo para
 **El Arca**, Cl 103 #14-27, Bucaramanga.
 
-> Estado: **Fase 5 (pedidos por WhatsApp)**. La tienda completa funciona: menú,
-> carrito, formulario de pedido, registro en la base, envío del resumen por
-> WhatsApp y consulta del pedido. Siguen las pantallas del panel (Fase 6).
+> Estado: **Fase 6 (panel administrativo)**. Tienda y panel completos: menú,
+> carrito, pedidos por WhatsApp; en `/admin`: dashboard, pedidos y estados,
+> productos, catálogo (categorías y adicionales), inventario y configuración.
+> Falta la validación final y la preparación para publicar (fases 7 y 8).
 >
 > Imágenes: la carta no trae fotos de los productos. Mientras el restaurante no
 > cargue fotos reales, cada producto muestra una ilustración de línea de su
@@ -78,12 +79,15 @@ Supabase Studio (ver tablas, usuarios): http://127.0.0.1:54323
 ## Base de datos
 
 ```bash
-npx supabase db reset       # recrea la base local desde las migraciones (borra datos locales)
-npx supabase test db        # pruebas pgTAP (RLS, restricciones, carta)
+npm run db:reset            # recrea la base local (carta real, sin pedidos) y la cuenta admin de desarrollo
+npm run db:test             # pruebas pgTAP (RLS, restricciones, carta)
 ```
 
-Las pruebas de integración del backend crean categorías `prueba-*` (inactivas
-al terminar) y pedidos de prueba en la base **local**. `db reset` los limpia.
+Las pruebas de integración del backend escriben en la base **local**: crean
+categorías `prueba-*` (se desactivan al terminar) y pedidos de prueba que sí
+aparecen en el dashboard local. Después de correrlas, `npm run db:reset` deja la
+base limpia. `db:reset` vuelve a crear la cuenta de `DEV_ADMIN_EMAIL` /
+`DEV_ADMIN_PASSWORD` de `backend/.env` (solo funciona contra Supabase local).
 
 ## Calidad
 
