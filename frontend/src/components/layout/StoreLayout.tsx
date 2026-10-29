@@ -84,7 +84,8 @@ function StoreHeader() {
 function FloatingCartBar() {
   const { count, subtotal } = useCart()
   const { pathname } = useLocation()
-  const visible = count > 0 && pathname !== '/carrito'
+  // No se muestra donde taparía los botones del pedido.
+  const visible = count > 0 && pathname !== '/carrito' && !pathname.startsWith('/pedido')
 
   return (
     <AnimatePresence>
@@ -202,6 +203,9 @@ function StoreFooter() {
           ) : (
             <p className="mt-1 text-cream-300">Pendiente por confirmar</p>
           )}
+          <Link to="/pedido/consultar" className="mt-4 inline-block font-semibold text-brand-400 hover:underline">
+            Consultar mi pedido →
+          </Link>
         </div>
       </div>
     </footer>

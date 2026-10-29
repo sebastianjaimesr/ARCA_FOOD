@@ -121,15 +121,22 @@ export function CartPage() {
             <p className="mt-4 rounded-lg bg-red-500/10 p-3 text-sm text-red-300">En este momento no estamos recibiendo pedidos en línea.</p>
           )}
 
-          {/* El formulario de datos y el envío por WhatsApp se conectan en la Fase 5. */}
-          <button
-            type="button"
-            disabled={!canContinue}
-            title="Disponible en la siguiente fase"
-            className="mt-5 w-full rounded-full bg-brand-500 px-6 py-3.5 font-bold text-ink-900 transition hover:bg-brand-400 disabled:cursor-not-allowed disabled:bg-ink-700 disabled:text-cream-300"
-          >
-            Continuar con mis datos
-          </button>
+          {canContinue ? (
+            <Link
+              to="/pedido"
+              className="mt-5 block w-full rounded-full bg-brand-500 px-6 py-3.5 text-center font-bold text-ink-900 transition hover:bg-brand-400 active:scale-[0.98]"
+            >
+              Continuar con mis datos
+            </Link>
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="mt-5 w-full cursor-not-allowed rounded-full bg-ink-700 px-6 py-3.5 font-bold text-cream-300"
+            >
+              {state.status === 'loading' ? 'Verificando precios…' : 'Continuar con mis datos'}
+            </button>
+          )}
           {issue && <p className="mt-2 text-center text-xs text-amber-300">Corrige el producto marcado para continuar.</p>}
         </aside>
       </div>

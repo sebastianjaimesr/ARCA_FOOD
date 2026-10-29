@@ -96,10 +96,38 @@ Cualquier estado no final → CANCELADO (con motivo obligatorio)
 - La cola operativa del dashboard (pendientes, en preparación…) muestra los
   pedidos activos de cualquier fecha.
 
+## Flujo del pedido por WhatsApp
+
+1. El cliente arma el carrito; cada cambio se cotiza con el backend (precios vigentes).
+2. En `/pedido` escribe nombre, celular, modalidad y, si es domicilio, dirección
+   (y zona, cuando haya zonas configuradas).
+3. El navegador envía solo IDs, cantidades, opciones y datos de contacto, más el
+   total que el cliente vio (`expectedTotal`).
+4. El backend recalcula todo, valida disponibilidad y crea el pedido **PENDIENTE**.
+   Si el total cambió, responde `PRICE_CHANGED` y el cliente ve el total nuevo
+   antes de volver a enviar.
+5. La página de confirmación muestra el código (`ARC-…`) y un botón que abre
+   `https://wa.me/<número configurado>?text=<resumen>`. El resumen se arma con
+   los precios guardados por el backend.
+6. WhatsApp se abre **solo cuando el cliente toca el botón** (los navegadores
+   bloquean ventanas abiertas automáticamente). Abrirlo no envía el mensaje: el
+   cliente debe tocar *Enviar* en WhatsApp.
+7. Si WhatsApp no se abre, el cliente puede copiar el resumen y enviarlo al número
+   que se muestra. El pedido ya existe y se puede consultar en `/pedido/consultar`
+   con código + celular.
+8. El restaurante confirma por WhatsApp y cambia el estado en el panel. Nada se
+   marca automáticamente como confirmado, pagado ni entregado.
+
+No hay integración con la API de WhatsApp Business: es un enlace con el mensaje
+precargado.
+
 ## Idempotencia (pedidos duplicados)
 
 - Cada intento de pedido lleva una clave única (`Idempotency-Key`, un UUID que
-  genera el navegador y conserva mientras el carrito no cambie).
+  genera el navegador). Se conserva en la sesión de la pestaña mientras el
+  contenido del pedido no cambie, así un doble clic, un reintento por red lenta o
+  una recarga reutilizan la misma clave. Si el cliente cambia algo, es otro
+  pedido y se genera otra clave. Tras crear el pedido la clave se descarta.
 - Si la misma clave llega otra vez con el mismo contenido (doble clic, red
   inestable), se devuelve **el mismo pedido** (HTTP 200, `replayed: true`).
 - Si llega con contenido distinto → `409 IDEMPOTENCY_CONFLICT`.
