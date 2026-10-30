@@ -1,6 +1,6 @@
 import type { Fulfillment } from '../types/catalog'
 import type { Order, OrderLookup } from '../types/order'
-import { apiFetch } from './api'
+import { apiFetch, ApiError } from './api'
 
 export type CreateOrderBody = {
   fulfillment: Fulfillment
@@ -15,12 +15,18 @@ export type CreateOrderBody = {
   items: { productId: string; variantId: string | null; optionIds: string[]; quantity: number; notes: string | null }[]
 }
 
+// En modo vitrina el pedido no se registra: se arma con las mismas reglas del
+// backend y se envía por WhatsApp.
 export const createOrder = (body: CreateOrderBody, idempotencyKey: string) =>
-  apiFetch<{ order: Order; replayed: boolean }>('/api/orders', {
-    method: 'POST',
-    body: JSON.stringify(body),
-    headers: { 'Idempotency-Key': idempotencyKey },
-  })
+  import.meta.env.VITE_STATIC_MODE === 'true'
+    ? import('./static-store').then((s) => s.staticCreateOrder(body))
+    : apiFetch<{ order: Order; replayed: boolean }>('/api/orders', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: { 'Idempotency-Key': idempotencyKey },
+      })
 
 export const lookupOrder = (code: string, phone: string) =>
-  apiFetch<OrderLookup>('/api/orders/lookup', { method: 'POST', body: JSON.stringify({ code, phone }) })
+  import.meta.env.VITE_STATIC_MODE === 'true'
+    ? Promise.reject(new ApiError(404, 'NOT_AVAILABLE', 'La consulta de pedidos no está disponible en esta versión'))
+    : apiFetch<OrderLookup>('/api/orders/lookup', { method: 'POST', body: JSON.stringify({ code, phone }) })

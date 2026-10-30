@@ -1,0 +1,3609 @@
+{
+  "exportedAt": "2026-10-30T04:07:13.588Z",
+  "settings": {
+    "businessName": "El Arca",
+    "tagline": "Comidas Rápidas",
+    "whatsappPhone": "573006681727",
+    "address": "Cl 103 #14-27",
+    "city": "Bucaramanga, Santander",
+    "instagramHandle": "elarcafastfood",
+    "logoUrl": "/brand/logo-el-arca.webp",
+    "currency": "COP",
+    "timezone": "America/Bogota",
+    "openingHours": null,
+    "deliveryEnabled": true,
+    "pickupEnabled": true,
+    "acceptingOrders": true,
+    "deliveryNotes": null,
+    "deliveryZones": []
+  },
+  "categories": [
+    {
+      "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+      "slug": "hamburguesas",
+      "name": "Hamburguesas",
+      "description": "Incluye papas a la francesa"
+    },
+    {
+      "id": "ec59b885-309d-494d-9639-38b79ebeaf8c",
+      "slug": "hot-dogs",
+      "name": "Hot Dogs",
+      "description": "Incluye papas a la francesa"
+    },
+    {
+      "id": "e161dddf-8bb1-47ec-95e4-0771f643f0aa",
+      "slug": "papas-locas",
+      "name": "Papas Locas",
+      "description": null
+    },
+    {
+      "id": "63be4f7b-77d6-4d1e-9395-13377e66695b",
+      "slug": "desgranados",
+      "name": "Desgranados",
+      "description": "Incluye papas a la francesa"
+    },
+    {
+      "id": "9ce0727e-e2f7-43ba-82a3-e44f7b4f7e38",
+      "slug": "salchipapas",
+      "name": "Salchipapas",
+      "description": null
+    },
+    {
+      "id": "0924a675-7e41-4c74-9932-856d5932b1e0",
+      "slug": "choripapas",
+      "name": "Choripapas",
+      "description": null
+    },
+    {
+      "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+      "slug": "carnes",
+      "name": "Carnes",
+      "description": null
+    },
+    {
+      "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+      "slug": "bebidas",
+      "name": "Bebidas",
+      "description": null
+    }
+  ],
+  "products": [
+    {
+      "id": "2101f81e-e068-446d-a9cd-0d408bd6b723",
+      "slug": "hamburguesa-clasica",
+      "name": "Clásica",
+      "description": "Carne 150 grs, jamón, queso, vegetales.",
+      "price": "19000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2d785c1d-3dcb-4341-b9e3-559dbab55158",
+      "slug": "hamburguesa-especial",
+      "name": "Especial",
+      "description": "Carne 150 grs, pollo desmechado, jamón, queso, tocineta, vegetales.",
+      "price": "24000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4033e042-89af-4e40-93ff-bd1962f8cdbb",
+      "slug": "hamburguesa-americana",
+      "name": "Americana",
+      "description": "Carne 150 grs, tocineta, aros de cebolla, jamón, queso, vegetales.",
+      "price": "24000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecd9db75-b1be-4205-b3d3-9b4a96846a87",
+      "slug": "hamburguesa-mixta",
+      "name": "Mixta",
+      "description": "Carne 150 grs, filete de pechuga, tocineta, jamón, queso, vegetales.",
+      "price": "25000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1ff3ab86-1be6-4fe7-8a19-2d3ca4afa48f",
+      "slug": "hamburguesa-ranchera",
+      "name": "Ranchera",
+      "description": "Carne 150 grs, pollo desmechado, salchicha americana, chorizo, tocineta, jamón, queso, vegetales.",
+      "price": "26500.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fe72f0a8-cb3d-4e7e-98fb-e08888fe597a",
+      "slug": "hamburguesa-mexicana",
+      "name": "Mexicana",
+      "description": "Carne 150 grs, carne desmechada, guacamole, nachos, jalapeños, jamón, queso, vegetales.",
+      "price": "27000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1b2ce068-6772-47e1-a2cb-c29d93d2ec4a",
+      "slug": "hamburguesa-doble-carne",
+      "name": "Doble Carne",
+      "description": "Carne 150 grs x2, jamón, queso, tocineta, vegetales.",
+      "price": "27000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c15f4e1d-6739-4aa4-af4b-50fa489d07c8",
+      "slug": "hamburguesa-santandereana",
+      "name": "Santandereana",
+      "description": "Carne 150 grs, carne desmechada, chorizo, maíz tierno, tocineta, arepa santandereana, jamón, queso, vegetales.",
+      "price": "28000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b59b5bdc-2676-4551-a892-d7c1f856366d",
+      "slug": "hamburguesa-vaquera",
+      "name": "Vaquera",
+      "description": "Carne 150 grs, pollo desmechado, filete de carne en cuadros BBQ, jamón, queso, vegetales.",
+      "price": "28000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6e383aa0-19f5-4568-b4b1-45ea7fa63e49",
+      "slug": "hamburguesa-crispy",
+      "name": "Crispy",
+      "description": "Carne 150 gr, filete de pechuga apanado, mermelada de chorizo, jamón, queso, vegetales.",
+      "price": "28000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b4c410ab-265d-411e-b8f6-7f79e6fa228f",
+      "slug": "hamburguesa-super-mixta",
+      "name": "Super Mixta",
+      "description": "Carne 150 grs x2, filete de pechuga, queso x2, jamón, tocineta, aros de cebolla, vegetales.",
+      "price": "34000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "74bc9ce5-3a7a-4a90-9fd1-208833a21cc2",
+      "slug": "hamburguesa-big-arca",
+      "name": "Big Arca",
+      "description": "Carne 150 grs x2, pollo desmechado, carne desmechada, tocineta, jamón x3, queso x3, vegetales.",
+      "price": "36000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": true,
+      "available": true,
+      "category": {
+        "id": "02394231-9300-4b96-8a18-9b319ade03d6",
+        "slug": "hamburguesas",
+        "name": "Hamburguesas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7cb72398-cfe5-4813-8342-a049a5f56de6",
+      "slug": "hot-dog-clasico",
+      "name": "Clásico",
+      "description": "Salchicha, papa molida, cebolla, queso gratinado.",
+      "price": "15000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "ec59b885-309d-494d-9639-38b79ebeaf8c",
+        "slug": "hot-dogs",
+        "name": "Hot Dogs"
+      },
+      "variants": [
+        {
+          "id": "375ed2dc-4982-4ce6-bebf-ec1480d76a4a",
+          "name": "Salchicha Zenú",
+          "price": "15000.00"
+        },
+        {
+          "id": "8caaef53-c314-49e8-a3b9-0d9615c70bf0",
+          "name": "Salchicha Americana",
+          "price": "16000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "285bd317-d6aa-4b25-ba06-e4ffd0dc689b",
+      "slug": "hot-dog-especial",
+      "name": "Especial",
+      "description": "Salchicha, papa molida, cebolla, pollo desmechado, jamón, queso gratinado.",
+      "price": "20000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "ec59b885-309d-494d-9639-38b79ebeaf8c",
+        "slug": "hot-dogs",
+        "name": "Hot Dogs"
+      },
+      "variants": [
+        {
+          "id": "781df02e-9ad8-4104-982f-28a20c357fe6",
+          "name": "Salchicha Zenú",
+          "price": "20000.00"
+        },
+        {
+          "id": "a28deed4-957d-40e8-929e-66429a0c8005",
+          "name": "Salchicha Americana",
+          "price": "21000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13c5ed73-599e-40de-9823-bb199d0f34bb",
+      "slug": "hot-dog-mexicano",
+      "name": "Mexicano",
+      "description": "Salchicha, nachos, carne desmechada, maíz tierno, guacamole, jalapeños, tocineta, queso gratinado.",
+      "price": "23000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "ec59b885-309d-494d-9639-38b79ebeaf8c",
+        "slug": "hot-dogs",
+        "name": "Hot Dogs"
+      },
+      "variants": [
+        {
+          "id": "bcb8aa77-f180-4503-9a65-0343a86044d7",
+          "name": "Salchicha Zenú",
+          "price": "23000.00"
+        },
+        {
+          "id": "61b71244-8c3e-40ac-b572-506f22ddd769",
+          "name": "Salchicha Americana",
+          "price": "24000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7b645f77-8061-4ef9-8690-1a53f69f204c",
+      "slug": "hot-dog-super-especial",
+      "name": "Super Especial",
+      "description": "Salchicha, pollo desmechado, carne desmechada, tocineta, cebolla, papa molida, queso gratinado.",
+      "price": "24000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "ec59b885-309d-494d-9639-38b79ebeaf8c",
+        "slug": "hot-dogs",
+        "name": "Hot Dogs"
+      },
+      "variants": [
+        {
+          "id": "95092f5f-419b-4655-83ad-d2e3e77695c4",
+          "name": "Salchicha Zenú",
+          "price": "24000.00"
+        },
+        {
+          "id": "a1300699-f1db-457f-89dc-bad2faa1f52e",
+          "name": "Salchicha Americana",
+          "price": "25000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db7f3f19-86f9-4958-8bf0-b2551460742b",
+      "slug": "hot-dog-mega-arca",
+      "name": "Mega Arca",
+      "description": "Salchicha, filete de carne, filete de pechuga, chorizo, cebolla, tocineta, papa molida, queso gratinado.",
+      "price": "27000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": true,
+      "available": true,
+      "category": {
+        "id": "ec59b885-309d-494d-9639-38b79ebeaf8c",
+        "slug": "hot-dogs",
+        "name": "Hot Dogs"
+      },
+      "variants": [
+        {
+          "id": "87e102ba-8f19-453f-9d0d-7d0c0a208659",
+          "name": "Salchicha Zenú",
+          "price": "27000.00"
+        },
+        {
+          "id": "3898d24a-aa1b-4702-bf84-5565ef35b774",
+          "name": "Salchicha Americana",
+          "price": "28000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "575f3f87-a648-4250-8b3a-5f6c41118cee",
+      "slug": "papas-locas-estandar",
+      "name": "Estándar 1.000 grs",
+      "description": "Papa a la francesa, filete de pechuga, filete de carne, salchicha Zenú, pollo desmechado mezclado con papa ripio y tártara, queso gratinado.",
+      "price": "35000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "e161dddf-8bb1-47ec-95e4-0771f643f0aa",
+        "slug": "papas-locas",
+        "name": "Papas Locas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8a7b5436-7224-4e58-9b04-1c69b2783e40",
+      "slug": "papas-locas-5-estrellas",
+      "name": "5 Estrellas 1.200 grs",
+      "description": "Papa a la francesa, filete de pechuga, filete de carne, salchicha Zenú, pollo desmechado mezclado con papa ripio y tártara, tocineta, queso gratinado.",
+      "price": "41000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": true,
+      "available": true,
+      "category": {
+        "id": "e161dddf-8bb1-47ec-95e4-0771f643f0aa",
+        "slug": "papas-locas",
+        "name": "Papas Locas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f15d005c-ba37-4528-b3c9-4bbaa24efd93",
+      "slug": "desgranado-especial",
+      "name": "Especial",
+      "description": "Maíz, pollo desmechado, jamón, tocineta, cebolla grille, queso gratinado.",
+      "price": "23000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "63be4f7b-77d6-4d1e-9395-13377e66695b",
+        "slug": "desgranados",
+        "name": "Desgranados"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8dcc03ac-0c95-4073-bc08-9180bc073f9f",
+      "slug": "desgranado-colombiano",
+      "name": "Colombiano",
+      "description": "Maíz, carne desmechada, chorizo, tocineta, cebolla grille, queso gratinado.",
+      "price": "24000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "63be4f7b-77d6-4d1e-9395-13377e66695b",
+        "slug": "desgranados",
+        "name": "Desgranados"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6a83327d-04a0-441f-a540-f02d0ad4b636",
+      "slug": "desgranado-mixto",
+      "name": "Mixto",
+      "description": "Maíz, pollo desmechado, carne desmechada, salchicha Zenú, tocineta, cebolla grille, queso gratinado.",
+      "price": "25000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "63be4f7b-77d6-4d1e-9395-13377e66695b",
+        "slug": "desgranados",
+        "name": "Desgranados"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e840e7a1-68a0-4e24-908e-5a8696e32b5e",
+      "slug": "desgranado-super-arca",
+      "name": "Super Arca",
+      "description": "Maíz, filete de pechuga, filete de carne, salchicha americana, chorizo, tocineta, cebolla grille, queso gratinado.",
+      "price": "27000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "63be4f7b-77d6-4d1e-9395-13377e66695b",
+        "slug": "desgranados",
+        "name": "Desgranados"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f294079f-3453-42c6-ab0d-e4cb303af5c4",
+      "slug": "salchipapa-personal",
+      "name": "Personal",
+      "description": "Tártara, piña, queso rayado.",
+      "price": "17000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "9ce0727e-e2f7-43ba-82a3-e44f7b4f7e38",
+        "slug": "salchipapas",
+        "name": "Salchipapas"
+      },
+      "variants": [
+        {
+          "id": "b28349c2-d988-4196-9141-5946b8f6e32d",
+          "name": "Salchicha Zenú",
+          "price": "17000.00"
+        },
+        {
+          "id": "22ee4298-5783-41dd-8388-a91d8905e268",
+          "name": "Salchicha Americana",
+          "price": "18000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c674fbc2-d3ca-4046-a5d9-722a83020602",
+      "slug": "salchipapa-especial",
+      "name": "Especial",
+      "description": "Pollo desmechado y queso gratinado.",
+      "price": "22000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "9ce0727e-e2f7-43ba-82a3-e44f7b4f7e38",
+        "slug": "salchipapas",
+        "name": "Salchipapas"
+      },
+      "variants": [
+        {
+          "id": "2e8e3676-edc4-4836-ac70-1199bcc311ea",
+          "name": "Salchicha Zenú",
+          "price": "22000.00"
+        },
+        {
+          "id": "28200722-a8ff-4323-814c-6577bbf807c9",
+          "name": "Salchicha Americana",
+          "price": "24000.00"
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12b95675-0fb8-43fd-a052-0800e8abb640",
+      "slug": "choripapa-personal",
+      "name": "Personal",
+      "description": "Tártara, piña, queso rayado.",
+      "price": "18000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "0924a675-7e41-4c74-9932-856d5932b1e0",
+        "slug": "choripapas",
+        "name": "Choripapas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0576b257-b99d-4614-a717-e81790ea9899",
+      "slug": "choripapa-especial",
+      "name": "Especial",
+      "description": "Pollo desmechado y queso gratinado.",
+      "price": "24000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "0924a675-7e41-4c74-9932-856d5932b1e0",
+        "slug": "choripapas",
+        "name": "Choripapas"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "edd60c44-9474-491b-9e99-307bb6c8d270",
+      "slug": "patacon-mixto",
+      "name": "Patacón Mixto",
+      "description": "Plátano verde, cebolla grille, filete de pechuga en cuadros, filete de carne en cuadros, chorizo, salchicha americana, tocineta y queso gratinado.",
+      "price": "26000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9249956e-1a9d-4ce8-8b02-86aa7ed6c6c5",
+      "slug": "patacon-especial",
+      "name": "Patacón Especial",
+      "description": "Plátano verde, cebolla grille, carne desmechada, pollo desmechado, maíz tierno, chorizo, tocineta, queso gratinado.",
+      "price": "27000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "94e71716-bbf4-4cf6-94d6-faa78d6a436b",
+      "slug": "pechuga-a-la-plancha",
+      "name": "Pechuga a la Plancha",
+      "description": "300 gramos de filete de pechuga, papa francesa, croquetas de yuca, ensalada.",
+      "price": "26000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a50767da-d678-4e38-a453-e62da4d2c970",
+      "slug": "chatas",
+      "name": "Chatas",
+      "description": "350 gramos de chatas, papa francesa, arepa santandereana, ensalada.",
+      "price": "30000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6964f76d-1187-4b8b-98f8-c542be29432f",
+      "slug": "costillas-de-cerdo-bbq",
+      "name": "Costillas de Cerdo BBQ",
+      "description": "500 gramos de costillas de cerdo, papa francesa, croquetas de yuca y ensalada.",
+      "price": "30000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6d5f55c7-6032-46f7-b929-97ece3fa6aec",
+      "slug": "picada-x-2",
+      "name": "Picada x 2",
+      "description": "500 gr de proteína (lomo de cerdo, carne, pechuga), chorizo, papa a la francesa, cebolla grille, croquetas de yuca, aros de cebolla, arepa amarilla y empanadas vallunas x2.",
+      "price": "45000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": true,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b5548a68-f526-45ab-a496-7ee90cf3b51c",
+      "slug": "picada-x-3",
+      "name": "Picada x 3",
+      "description": "750 gr de proteína (lomo de cerdo, carne, pechuga), chorizo, papa a la francesa, cebolla grille, croquetas de yuca, aros de cebolla, arepa amarilla y empanadas vallunas x3.",
+      "price": "60000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "7da13d8f-d96d-47ae-9304-ce3a01e34674",
+        "slug": "carnes",
+        "name": "Carnes"
+      },
+      "variants": [],
+      "optionGroups": [
+        {
+          "id": "7d03858f-f08a-4d7b-9863-8ab6c6817ee2",
+          "name": "Adicionales",
+          "minSelect": 0,
+          "maxSelect": null,
+          "options": [
+            {
+              "id": "eab60fff-0bef-4ec0-a9e1-4debaedc4d04",
+              "name": "Queso rayado",
+              "price": "2000.00"
+            },
+            {
+              "id": "658c0a36-24a1-4302-a574-cfe5ff5895c6",
+              "name": "Jalapeños",
+              "price": "2500.00"
+            },
+            {
+              "id": "e32a0d0f-42f0-49d6-8714-9806c212da71",
+              "name": "Salchicha Zenú",
+              "price": "2500.00"
+            },
+            {
+              "id": "885aead6-68ca-4c57-b888-1e855ff73f68",
+              "name": "Queso tajado x 2",
+              "price": "3000.00"
+            },
+            {
+              "id": "8473c7ba-881e-48d7-95c7-54461196873c",
+              "name": "Queso tajado x 5",
+              "price": "6000.00"
+            },
+            {
+              "id": "67aa1b2f-3c88-4720-beb4-89c705c1def1",
+              "name": "Aros de cebolla x 3",
+              "price": "3500.00"
+            },
+            {
+              "id": "41d3e191-2578-43b5-9124-22b2286a6bbe",
+              "name": "Maíz tierno 100 grs",
+              "price": "4000.00"
+            },
+            {
+              "id": "873e931c-e72f-40c5-bb8b-13b54c736c5a",
+              "name": "Tocineta",
+              "price": "3000.00"
+            },
+            {
+              "id": "21a8e77b-1cbb-4dbe-8ff2-81b9865d44f9",
+              "name": "Salchicha americana",
+              "price": "4500.00"
+            },
+            {
+              "id": "e4bbb70f-74da-426c-b924-88dd99f9bd9a",
+              "name": "Chorizo",
+              "price": "4500.00"
+            },
+            {
+              "id": "4b6215dd-c292-4761-a11a-c0a444486588",
+              "name": "Filete de pechuga 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "9f28e55f-930c-4a36-ae42-7b7dc1ff6300",
+              "name": "Pollo desmechado 100 grs",
+              "price": "7000.00"
+            },
+            {
+              "id": "7bdb1bd8-0d81-49c3-8e80-4846618bc7e9",
+              "name": "Carne desmechada 100 grs",
+              "price": "8000.00"
+            },
+            {
+              "id": "279aa067-5809-4a51-bde6-e2f150561f4a",
+              "name": "Papa francesa persona (salsas al gusto y queso rayado)",
+              "price": "12000.00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08226945-6b9f-46c6-908e-2754c70ac721",
+      "slug": "limonada-de-panela",
+      "name": "Limonada de Panela 16 oz",
+      "description": null,
+      "price": "3000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "e1f5e8e8-db3b-4a8b-a2e8-4d704df186a3",
+      "slug": "botella-de-agua",
+      "name": "Botella de Agua",
+      "description": null,
+      "price": "3000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "387e9a9a-1911-4751-952f-2842b23e3147",
+      "slug": "gaseosa-pet-400",
+      "name": "Gaseosa PET 400",
+      "description": null,
+      "price": "4000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "0cf11370-3166-4a80-8de6-813bfad32eea",
+      "slug": "mr-tea-pet-500",
+      "name": "Mr. Tea PET 500",
+      "description": null,
+      "price": "4000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "ebdae21e-5311-4244-a51c-51221b5333b9",
+      "slug": "jugo-hit-pet-500",
+      "name": "Jugo Hit PET 500",
+      "description": null,
+      "price": "4000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "ffd7141d-5e8c-463f-b612-72c22945dbc7",
+      "slug": "jugo-hit-caja-litro",
+      "name": "Jugo Hit Caja Litro",
+      "description": null,
+      "price": "7000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "ab8a7f40-309c-4e1c-a13c-cbe784f39296",
+      "slug": "gaseosa-1-5",
+      "name": "Gaseosa 1.5",
+      "description": null,
+      "price": "8000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "6b74d6c2-f56e-4118-a78b-04f264923f8f",
+      "slug": "granizada",
+      "name": "Granizada",
+      "description": null,
+      "price": "5000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    },
+    {
+      "id": "5d0b2397-892e-4d78-9f89-d72b8ba3548f",
+      "slug": "granizadas-x-2",
+      "name": "Granizadas x 2",
+      "description": null,
+      "price": "8000.00",
+      "imageUrl": null,
+      "imageAlt": null,
+      "isFeatured": false,
+      "available": true,
+      "category": {
+        "id": "535b0066-5628-4f30-b22a-cfff722e15c0",
+        "slug": "bebidas",
+        "name": "Bebidas"
+      },
+      "variants": [],
+      "optionGroups": []
+    }
+  ]
+}

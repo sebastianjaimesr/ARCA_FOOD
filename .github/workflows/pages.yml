@@ -1,0 +1,49 @@
+# Publica la tienda en GitHub Pages en "modo vitrina" (sin backend):
+# menú de src/static/catalog.json, pedidos por WhatsApp, sin panel admin.
+# https://<usuario>.github.io/<repositorio>/
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # Pruebas del frontend (incluyen el modo vitrina) antes de publicar.
+      - run: npm test -w @el-arca/frontend
+      - name: Build modo vitrina
+        run: npm run build -w @el-arca/frontend
+        env:
+          VITE_STATIC_MODE: 'true'
+          VITE_BASE: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

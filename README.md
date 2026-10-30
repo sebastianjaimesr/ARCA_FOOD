@@ -3,7 +3,10 @@
 Tienda en línea con pedidos por WhatsApp y panel administrativo para
 **El Arca**, Cl 103 #14-27, Bucaramanga.
 
-> Estado: **las 8 fases construidas; aún no publicado**. Tienda y panel completos: menú,
+> **Tienda publicada (modo vitrina):** https://sebastianjaimesr.github.io/ARCA_FOOD/ —
+> menú y pedidos por WhatsApp, sin backend ([detalles](docs/github-pages.md)).
+>
+> Estado: las 8 fases construidas. Tienda y panel completos: menú,
 > carrito, pedidos por WhatsApp; en `/admin`: dashboard, pedidos y estados,
 > productos, catálogo (categorías y adicionales), inventario y configuración.
 > Validado (docs/validacion.md) y preparado para publicar (docs/despliegue.md);
@@ -21,6 +24,7 @@ Tienda en línea con pedidos por WhatsApp y panel administrativo para
 - [Seguridad y creación del primer administrador](docs/seguridad.md)
 - [Validación: pruebas, seguridad, accesibilidad y rendimiento](docs/validacion.md)
 - [Despliegue a producción y lista de verificación](docs/despliegue.md)
+- [GitHub Pages: modo vitrina y cómo actualizar la carta publicada](docs/github-pages.md)
 
 ## Estructura
 

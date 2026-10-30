@@ -42,6 +42,23 @@ export function securityHeaders(env: { VITE_API_URL?: string; VITE_SUPABASE_URL?
   }
 }
 
+// CSP del modo vitrina (GitHub Pages): no hay API ni Supabase, así que el sitio
+// solo se conecta consigo mismo. Va en <meta>, donde frame-ancestors no aplica.
+export function staticModeCsp() {
+  return [
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self'",
+    "font-src 'self'",
+    "img-src 'self' data: https:",
+    "connect-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    'upgrade-insecure-requests',
+  ].join('; ')
+}
+
 // Archivo _headers: seguridad en todas las rutas; los archivos con hash en el
 // nombre (/assets/*) se cachean un año; index.html siempre se revalida.
 export function headersFile(headers: Record<string, string>) {

@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 import { ArrowRight, Clock, MapPin, MessageCircle, Send, ShoppingBag, UtensilsCrossed } from 'lucide-react'
 import { Link } from 'react-router'
 import { CategoryArt } from '../components/brand/CategoryArt'
+import { asset } from '../config/mode'
 import { useCart } from '../features/cart/cart-context'
 import { ProductCard } from '../features/products/ProductCard'
 import { ProductSheet } from '../features/products/ProductSheet'
@@ -172,7 +173,7 @@ function Hero({ acceptingOrders, whatsapp }: { acceptingOrders: boolean; whatsap
         </m.div>
 
         <m.img
-          src="/brand/logo-el-arca-512.webp"
+          src={asset('/brand/logo-el-arca-512.webp')}
           alt="Logo de El Arca Comidas Rápidas"
           width={512}
           height={512}

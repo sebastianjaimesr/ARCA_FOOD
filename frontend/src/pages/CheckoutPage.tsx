@@ -3,6 +3,7 @@ import { AlertTriangle, ArrowLeft, Bike, LoaderCircle, Send, Store } from 'lucid
 import { useMemo, useState } from 'react'
 import { useForm, useWatch } from 'react-hook-form'
 import { Link, Navigate } from 'react-router'
+import { STATIC_MODE } from '../config/mode'
 import { useCart } from '../features/cart/cart-context'
 import { toQuoteItems } from '../features/cart/cart-logic'
 import { useCartQuote } from '../features/cart/useCartQuote'
@@ -272,7 +273,7 @@ export function CheckoutPage() {
             className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-4 font-bold text-ink-900 transition hover:bg-brand-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-ink-700 disabled:text-cream-300"
           >
             {isSubmitting ? <LoaderCircle className="size-5 animate-spin" aria-hidden /> : <Send className="size-5" aria-hidden />}
-            {isSubmitting ? 'Registrando pedido…' : 'Confirmar pedido'}
+            {isSubmitting ? (STATIC_MODE ? 'Preparando pedido…' : 'Registrando pedido…') : STATIC_MODE ? 'Continuar a WhatsApp' : 'Confirmar pedido'}
           </button>
           <p className="mt-3 text-center text-xs text-cream-300">
             En el siguiente paso envías el resumen por WhatsApp. El restaurante confirma tu pedido por ese medio.

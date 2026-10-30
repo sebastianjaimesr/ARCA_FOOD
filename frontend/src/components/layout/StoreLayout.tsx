@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, ScrollRestoration, useLocation } from 'react-router'
 import { useCart } from '../../features/cart/cart-context'
 import { CartProvider } from '../../features/cart/CartProvider'
+import { asset, STATIC_MODE } from '../../config/mode'
 import { useSettings } from '../../hooks/useCatalog'
 import { describeHours, formatPhone, fullAddress, mapsUrl, whatsappUrl } from '../../lib/business'
 import { formatCOP } from '../../lib/format'
@@ -39,7 +40,7 @@ function StoreHeader() {
     <header className="sticky top-0 z-40 border-b border-ink-700/80 bg-ink-900/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label={`${name}, inicio`}>
-          <img src="/brand/logo-el-arca-96.webp" alt="" width={40} height={40} className="size-10 shrink-0 rounded-xl" />
+          <img src={asset('/brand/logo-el-arca-96.webp')} alt="" width={40} height={40} className="size-10 shrink-0 rounded-xl" />
           <span className="hidden leading-none min-[380px]:block">
             <span className="block text-lg font-black tracking-tight text-brand-500 uppercase">{name}</span>
             <span className="block text-[10px] font-medium tracking-[0.2em] text-cream-300 uppercase">
@@ -203,9 +204,11 @@ function StoreFooter() {
           ) : (
             <p className="mt-1 text-cream-300">Pendiente por confirmar</p>
           )}
-          <Link to="/pedido/consultar" className="mt-4 inline-block font-semibold text-brand-400 hover:underline">
-            Consultar mi pedido →
-          </Link>
+          {!STATIC_MODE && (
+            <Link to="/pedido/consultar" className="mt-4 inline-block font-semibold text-brand-400 hover:underline">
+              Consultar mi pedido →
+            </Link>
+          )}
         </div>
       </div>
     </footer>

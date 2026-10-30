@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 import { Check, ClipboardCopy, ExternalLink, MessageCircle, Search } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router'
+import { STATIC_MODE } from '../config/mode'
 import { readLastOrder } from '../features/orders/last-order'
 import { OrderSummary } from '../features/orders/OrderSummary'
 import { buildWhatsappMessage } from '../features/orders/whatsapp-message'
@@ -16,6 +17,18 @@ export function OrderConfirmationPage() {
   const [copied, setCopied] = useState(false)
 
   // Visita directa sin el pedido en esta sesión: se consulta por código + teléfono.
+  // (En el modo vitrina no hay consulta: se escribe por WhatsApp.)
+  if (!order && STATIC_MODE) {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16 text-center">
+        <h1 className="text-2xl font-black text-cream-50">Pedido {code}</h1>
+        <p className="mt-2 text-cream-300">Este enlace solo funciona en el navegador donde se armó el pedido. Para saber cómo va, escríbenos por WhatsApp con tu referencia.</p>
+        <Link to="/menu" className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 font-bold text-ink-900 hover:bg-brand-400">
+          Ver el menú
+        </Link>
+      </div>
+    )
+  }
   if (!order) {
     return (
       <div className="mx-auto max-w-lg px-4 py-16 text-center">
@@ -50,9 +63,9 @@ export function OrderConfirmationPage() {
       <m.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mx-auto grid size-16 place-items-center rounded-full bg-brand-500 text-ink-900">
         <Check className="size-9" strokeWidth={3} aria-hidden />
       </m.div>
-      <h1 className="mt-5 text-center text-3xl font-black text-cream-50">Pedido registrado</h1>
+      <h1 className="mt-5 text-center text-3xl font-black text-cream-50">{STATIC_MODE ? 'Pedido listo para enviar' : 'Pedido registrado'}</h1>
       <p className="mt-2 text-center text-cream-300">
-        Tu código es <strong className="text-2xl font-black tracking-wide text-brand-400">{order.code}</strong>
+        {STATIC_MODE ? 'Tu referencia es' : 'Tu código es'} <strong className="text-2xl font-black tracking-wide text-brand-400">{order.code}</strong>
       </p>
 
       <section className="mt-8 rounded-2xl border-2 border-brand-500/60 bg-brand-500/5 p-5" aria-labelledby="send-step">
@@ -60,8 +73,18 @@ export function OrderConfirmationPage() {
           Falta un paso: envíalo por WhatsApp
         </h2>
         <p className="mt-1 text-sm text-cream-300">
-          Tu pedido quedó guardado como <strong className="text-cream-100">pendiente</strong>. El restaurante lo confirma cuando reciba tu
-          mensaje{order.fulfillment === 'DOMICILIO' && order.deliveryFee === null ? ', junto con el valor del domicilio' : ''}.
+          {STATIC_MODE ? (
+            <>
+              Tu pedido <strong className="text-cream-100">todavía no ha llegado al restaurante</strong>: envíalo por WhatsApp para que lo
+              reciban y lo confirmen
+            </>
+          ) : (
+            <>
+              Tu pedido quedó guardado como <strong className="text-cream-100">pendiente</strong>. El restaurante lo confirma cuando reciba tu
+              mensaje
+            </>
+          )}
+          {order.fulfillment === 'DOMICILIO' && order.deliveryFee === null ? ', junto con el valor del domicilio' : ''}.
         </p>
 
         {waLink ? (
@@ -134,9 +157,11 @@ export function OrderConfirmationPage() {
       </section>
 
       <div className="mt-6 flex flex-col items-center gap-3 text-sm sm:flex-row sm:justify-center">
-        <Link to={`/pedido/consultar?codigo=${order.code}`} className="inline-flex items-center gap-1.5 font-semibold text-brand-400 hover:underline">
-          <Search className="size-4" aria-hidden /> Consultar el estado más tarde
-        </Link>
+        {!STATIC_MODE && (
+          <Link to={`/pedido/consultar?codigo=${order.code}`} className="inline-flex items-center gap-1.5 font-semibold text-brand-400 hover:underline">
+            <Search className="size-4" aria-hidden /> Consultar el estado más tarde
+          </Link>
+        )}
         <Link to="/menu" className="inline-flex items-center gap-1.5 text-cream-300 hover:text-cream-50">
           <ExternalLink className="size-4" aria-hidden /> Hacer otro pedido
         </Link>

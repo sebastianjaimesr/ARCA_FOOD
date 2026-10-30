@@ -1,10 +1,10 @@
 /// <reference types="vitest/config" />
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { readFileSync } from 'node:fs'
+import { copyFileSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
-import { headersFile, parseHeadersFile, redirectsFile, securityHeaders } from './deploy/security-headers.ts'
+import { headersFile, parseHeadersFile, redirectsFile, securityHeaders, staticModeCsp } from './deploy/security-headers.ts'
 
 // Genera dist/_headers y dist/_redirects para el hosting estático. `vite preview`
 // lee ese mismo dist/_headers, así se prueba exactamente lo que se publicará
@@ -33,12 +33,38 @@ function staticHostingFiles(headers: Record<string, string>): Plugin {
   }
 }
 
+// GitHub Pages (modo vitrina): no permite cabeceras HTTP propias, así que el CSP
+// va en una etiqueta <meta>; 404.html = index.html para que las rutas internas
+// (/menu, /carrito…) funcionen al recargar; .nojekyll evita el procesamiento Jekyll.
+function githubPages(): Plugin {
+  let outDir = 'dist'
+  return {
+    name: 'el-arca-github-pages',
+    apply: 'build',
+    configResolved(config) {
+      outDir = config.build.outDir
+    },
+    transformIndexHtml() {
+      return [{ tag: 'meta', attrs: { 'http-equiv': 'Content-Security-Policy', content: staticModeCsp() }, injectTo: 'head-prepend' }]
+    },
+    generateBundle() {
+      this.emitFile({ type: 'asset', fileName: '.nojekyll', source: '' })
+    },
+    closeBundle() {
+      copyFileSync(resolve(outDir, 'index.html'), resolve(outDir, '404.html'))
+    },
+  }
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
   const production = mode === 'production'
+  const staticMode = env.VITE_STATIC_MODE === 'true'
 
   return {
-    plugins: [react(), tailwindcss(), staticHostingFiles(securityHeaders(env, true))],
+    // En GitHub Pages el sitio vive en una subcarpeta (ej. /ARCA_FOOD/).
+    base: env.VITE_BASE || '/',
+    plugins: [react(), tailwindcss(), staticHostingFiles(securityHeaders(env, true)), ...(staticMode ? [githubPages()] : [])],
     server: {
       port: 5173,
       // En desarrollo, /api se reenvía al backend de Express para evitar problemas de CORS.

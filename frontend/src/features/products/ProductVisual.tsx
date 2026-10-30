@@ -1,4 +1,5 @@
 import { CategoryArt } from '../../components/brand/CategoryArt'
+import { asset } from '../../config/mode'
 import type { Product } from '../../types/catalog'
 
 // Foto real si el restaurante la cargó; si no, la ilustración de su categoría.
@@ -6,7 +7,7 @@ export function ProductVisual({ product, className = '' }: { product: Product; c
   if (product.imageUrl) {
     return (
       <img
-        src={product.imageUrl}
+        src={product.imageUrl.startsWith('/') ? asset(product.imageUrl) : product.imageUrl}
         alt={product.imageAlt ?? product.name}
         loading="lazy"
         decoding="async"
