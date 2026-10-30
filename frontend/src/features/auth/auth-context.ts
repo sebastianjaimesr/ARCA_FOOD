@@ -8,12 +8,17 @@ export type AuthState =
   // Sesión válida en Supabase pero la cuenta no tiene rol en el panel.
   | { status: 'forbidden'; email: string }
   | { status: 'error'; message: string }
-  | { status: 'signed-in'; session: Session; user: StaffUser }
+  // `session` solo existe con Supabase Auth (modo completo).
+  | { status: 'signed-in'; user: StaffUser; session?: Session }
 
 export type AuthContextValue = {
   state: AuthState
-  signIn: (email: string, password: string) => Promise<void>
+  signIn: (identifier: string, password: string) => Promise<void>
   signOut: () => Promise<void>
+  // Con qué se inicia sesión: correo (Supabase) o usuario (modo demostración).
+  identifierKind: 'email' | 'username'
+  // Problema de configuración que impide iniciar sesión (o null).
+  configError: string | null
 }
 
 export const AuthContext = createContext<AuthContextValue | null>(null)

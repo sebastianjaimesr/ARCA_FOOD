@@ -49,6 +49,22 @@ export function useQuery<T>(key: string, fetcher: () => Promise<T>) {
 
   useEffect(() => run(false), [run])
 
+  // Modo demostración: si el panel cambia el menú o la configuración en este
+  // navegador, la tienda se actualiza al instante (sin esperar la caché).
+  useEffect(() => {
+    if (import.meta.env.VITE_STATIC_MODE === 'true') {
+      let unsubscribe = () => {}
+      let cancelled = false
+      import('../local/local-db').then((db) => {
+        if (!cancelled) unsubscribe = db.subscribeLocalDb(() => run(true))
+      })
+      return () => {
+        cancelled = true
+        unsubscribe()
+      }
+    }
+  }, [run])
+
   const retry = useCallback(() => {
     setState({ status: 'loading' })
     run(true)

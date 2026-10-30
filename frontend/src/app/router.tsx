@@ -31,14 +31,11 @@ export const router = createBrowserRouter(
           path: 'pedido/:code',
           lazy: async () => ({ Component: (await import('../pages/OrderConfirmationPage')).OrderConfirmationPage }),
         },
-        // En modo vitrina no hay backend: el panel no se incluye en el sitio.
-        ...(STATIC_MODE ? [{ path: 'admin/*', element: <StaticModeNotice feature="admin" /> }] : []),
         { path: '*', element: <NotFoundPage /> },
       ],
     },
-    // Condición escrita en línea (no con STATIC_MODE) para que el empaquetador
-    // elimine el panel y Supabase del build vitrina.
-    ...(import.meta.env.VITE_STATIC_MODE === 'true' ? [] : [adminRoutes]),
+    // Panel: con backend (modo completo) o con LocalStorage (modo demostración).
+    adminRoutes,
   ],
   // En GitHub Pages el sitio vive en /ARCA_FOOD/.
   { basename: import.meta.env.BASE_URL.replace(/\/$/, '') || '/' },

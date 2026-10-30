@@ -35,6 +35,22 @@ export function useAdminData<T>(fetcher: () => Promise<T>, deps: unknown[], opti
     return () => clearInterval(timer)
   }, [options.refreshMs])
 
+  // Modo demostración: los datos viven en este navegador; cualquier cambio
+  // (un pedido nuevo desde la tienda, otra pestaña del panel) recarga al instante.
+  useEffect(() => {
+    if (import.meta.env.VITE_STATIC_MODE === 'true') {
+      let unsubscribe = () => {}
+      let cancelled = false
+      import('../local/local-db').then((db) => {
+        if (!cancelled) unsubscribe = db.subscribeLocalDb(() => setVersion((v) => v + 1))
+      })
+      return () => {
+        cancelled = true
+        unsubscribe()
+      }
+    }
+  }, [])
+
   const reload = useCallback(() => setVersion((v) => v + 1), [])
   const setData = useCallback((data: T) => setState({ status: 'success', data }), [])
 

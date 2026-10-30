@@ -6,6 +6,7 @@ import { Link, useNavigate, useParams } from 'react-router'
 import { z } from 'zod'
 import { Alert, Button, Field, Loading, PageHeader, Panel, Select, TextArea, TextInput, Toggle } from '../../components/admin/ui'
 import { useIsAdmin } from '../../features/auth/useIsAdmin'
+import { STATIC_MODE } from '../../config/mode'
 import { useAdminData } from '../../hooks/useAdminData'
 import { adminApi, errorMessage } from '../../services/admin'
 import type { AdminCategory, AdminOptionGroup, AdminProduct } from '../../types/admin'
@@ -289,37 +290,40 @@ function ProductForm({
             </div>
           </Panel>
 
-          <Panel title="Inventario">
-            <div className="space-y-4">
-              <Controller
-                control={control}
-                name="trackStock"
-                render={({ field }) => (
-                  <Toggle
-                    checked={field.value}
-                    onChange={field.onChange}
-                    disabled={readOnly}
-                    label="Controlar existencias"
-                    description="Para productos terminados que se cuentan por unidad (ej. bebidas)."
-                  />
+          {/* El inventario por unidades necesita el backend: no se muestra en la demostración. */}
+          {!STATIC_MODE && (
+            <Panel title="Inventario">
+              <div className="space-y-4">
+                <Controller
+                  control={control}
+                  name="trackStock"
+                  render={({ field }) => (
+                    <Toggle
+                      checked={field.value}
+                      onChange={field.onChange}
+                      disabled={readOnly}
+                      label="Controlar existencias"
+                      description="Para productos terminados que se cuentan por unidad (ej. bebidas)."
+                    />
+                  )}
+                />
+                {trackStock && (
+                  <>
+                    <Field label="Cantidad mínima" error={errors.minStock?.message} hint="Debajo de esta cantidad aparece la alerta de stock bajo.">
+                      <TextInput type="number" min={0} {...register('minStock')} />
+                    </Field>
+                    <p className="text-xs text-cream-300">
+                      Existencias actuales: <strong className="text-cream-50">{product?.stockQuantity ?? 0}</strong>. Se cambian desde{' '}
+                      <Link to="/admin/inventario" className="text-brand-400 hover:underline">
+                        Inventario
+                      </Link>{' '}
+                      con un movimiento (entrada, salida o ajuste). Con 0 existencias el producto se muestra agotado.
+                    </p>
+                  </>
                 )}
-              />
-              {trackStock && (
-                <>
-                  <Field label="Cantidad mínima" error={errors.minStock?.message} hint="Debajo de esta cantidad aparece la alerta de stock bajo.">
-                    <TextInput type="number" min={0} {...register('minStock')} />
-                  </Field>
-                  <p className="text-xs text-cream-300">
-                    Existencias actuales: <strong className="text-cream-50">{product?.stockQuantity ?? 0}</strong>. Se cambian desde{' '}
-                    <Link to="/admin/inventario" className="text-brand-400 hover:underline">
-                      Inventario
-                    </Link>{' '}
-                    con un movimiento (entrada, salida o ajuste). Con 0 existencias el producto se muestra agotado.
-                  </p>
-                </>
-              )}
-            </div>
-          </Panel>
+              </div>
+            </Panel>
+          )}
 
           <Panel title="Imagen">
             <div className="space-y-4">

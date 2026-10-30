@@ -5,36 +5,40 @@ import { useForm } from 'react-hook-form'
 import { Navigate, useLocation } from 'react-router'
 import { z } from 'zod'
 import { useAuth } from '../../features/auth/auth-context'
-import { isSupabaseConfigured } from '../../lib/supabase'
 
-const loginSchema = z.object({
-  email: z.string().trim().email('Escribe un correo válido'),
-  password: z.string().min(1, 'Escribe tu contraseña'),
-})
-type LoginForm = z.infer<typeof loginSchema>
+// Modo completo: correo de Supabase Auth. Modo demostración: nombre de usuario.
+const loginSchema = (kind: 'email' | 'username') =>
+  z.object({
+    identifier:
+      kind === 'email'
+        ? z.string().trim().email('Escribe un correo válido')
+        : z.string().trim().min(3, 'Escribe tu usuario'),
+    password: z.string().min(1, 'Escribe tu contraseña'),
+  })
+type LoginForm = z.infer<ReturnType<typeof loginSchema>>
 
 const inputClass =
   'mt-1.5 w-full rounded-lg border border-ink-600 bg-ink-800 px-3.5 py-2.5 text-cream-50 placeholder:text-ink-400 focus:border-brand-500 focus:outline-none'
 
 export function AdminLoginPage() {
-  const { state, signIn } = useAuth()
+  const { state, signIn, identifierKind, configError } = useAuth()
   const location = useLocation()
   const [error, setError] = useState<string | null>(null)
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginForm>({ resolver: zodResolver(loginSchema) })
+  } = useForm<LoginForm>({ resolver: zodResolver(loginSchema(identifierKind)) })
 
   if (state.status === 'signed-in') {
     const from = (location.state as { from?: string } | null)?.from
     return <Navigate to={from && from !== '/admin/login' ? from : '/admin'} replace />
   }
 
-  const onSubmit = handleSubmit(async ({ email, password }) => {
+  const onSubmit = handleSubmit(async ({ identifier, password }) => {
     setError(null)
     try {
-      await signIn(email, password)
+      await signIn(identifier, password)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'No pudimos iniciar sesión')
     }
@@ -46,17 +50,21 @@ export function AdminLoginPage() {
         <p className="font-script text-4xl text-brand-500">El Arca</p>
         <h1 className="mt-1 text-lg font-bold text-cream-50">Panel administrativo</h1>
 
-        {!isSupabaseConfigured && (
-          <p className="mt-4 rounded-lg bg-red-500/10 p-3 text-sm text-red-300">
-            Falta configurar VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY.
-          </p>
-        )}
+        {configError && <p className="mt-4 rounded-lg bg-red-500/10 p-3 text-sm text-red-300">{configError}</p>}
 
         <label className="mt-6 block text-sm font-medium text-cream-100">
-          Correo
-          <input type="email" autoComplete="username" className={inputClass} aria-invalid={!!errors.email} {...register('email')} />
+          {identifierKind === 'email' ? 'Correo' : 'Usuario'}
+          <input
+            type={identifierKind === 'email' ? 'email' : 'text'}
+            autoComplete="username"
+            autoCapitalize="none"
+            spellCheck={false}
+            className={inputClass}
+            aria-invalid={!!errors.identifier}
+            {...register('identifier')}
+          />
         </label>
-        {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
+        {errors.identifier && <p className="mt-1 text-xs text-red-400">{errors.identifier.message}</p>}
 
         <label className="mt-4 block text-sm font-medium text-cream-100">
           Contraseña

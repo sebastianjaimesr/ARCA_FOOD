@@ -1,22 +1,27 @@
-import { Boxes, ClipboardList, LayoutDashboard, ListPlus, LogOut, Settings, Store, UtensilsCrossed } from 'lucide-react'
+import { BookOpen, Boxes, ClipboardList, Info, LayoutDashboard, ListPlus, LogOut, Settings, Store, UtensilsCrossed } from 'lucide-react'
 import { Link, NavLink, Outlet } from 'react-router'
+import { STATIC_MODE } from '../../config/mode'
 import { useAuth } from '../../features/auth/auth-context'
 
 // "adminOnly": el personal (staff) no ve estas secciones. Es solo interfaz:
 // el backend rechaza igual cualquier cambio sin el rol adecuado.
+// "mode": secciones que solo existen con backend ("full") o en la demostración ("demo").
 const sections = [
   { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true, adminOnly: false },
   { to: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList, adminOnly: false },
   { to: '/admin/productos', label: 'Productos', icon: UtensilsCrossed, adminOnly: false },
   { to: '/admin/catalogo', label: 'Catálogo', icon: ListPlus, adminOnly: false },
-  { to: '/admin/inventario', label: 'Inventario', icon: Boxes, adminOnly: false },
+  { to: '/admin/inventario', label: 'Inventario', icon: Boxes, adminOnly: false, mode: 'full' },
   { to: '/admin/configuracion', label: 'Configuración', icon: Settings, adminOnly: true },
+  { to: '/admin/guia', label: 'Guía', icon: BookOpen, adminOnly: true, mode: 'demo' },
 ]
 
 export function AdminLayout() {
   const { state, signOut } = useAuth()
   const user = state.status === 'signed-in' ? state.user : null
-  const visible = sections.filter((s) => !s.adminOnly || user?.role === 'admin')
+  const visible = sections.filter(
+    (s) => (!s.adminOnly || user?.role === 'admin') && (!('mode' in s) || s.mode === (STATIC_MODE ? 'demo' : 'full')),
+  )
 
   return (
     <div className="flex min-h-dvh bg-ink-950">
@@ -88,6 +93,17 @@ export function AdminLayout() {
             ))}
           </nav>
         </header>
+        {STATIC_MODE && (
+          <p role="note" className="flex items-start gap-2 border-b border-amber-400/30 bg-amber-400/10 px-4 py-2 text-xs text-amber-100 md:px-8">
+            <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
+            <span>
+              <strong>Modo demostración:</strong> los datos se guardan solo en este navegador. Los pedidos de los clientes llegan por WhatsApp.{' '}
+              <Link to="/admin/guia" className="font-semibold underline">
+                Cómo pasar a producción
+              </Link>
+            </span>
+          </p>
+        )}
         <main className="flex-1 p-4 md:p-8">
           <Outlet />
         </main>

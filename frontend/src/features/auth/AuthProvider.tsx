@@ -1,6 +1,6 @@
 import type { Session } from '@supabase/supabase-js'
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
-import { supabase } from '../../lib/supabase'
+import { isSupabaseConfigured, supabase } from '../../lib/supabase'
 import { ApiError, getMe } from '../../services/api'
 import { AuthContext, type AuthState } from './auth-context'
 
@@ -56,6 +56,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setState({ status: 'signed-out' })
   }, [])
 
-  const value = useMemo(() => ({ state, signIn, signOut }), [state, signIn, signOut])
+  const value = useMemo(
+    () => ({
+      state,
+      signIn,
+      signOut,
+      identifierKind: 'email' as const,
+      configError: isSupabaseConfigured ? null : 'Falta configurar VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY.',
+    }),
+    [state, signIn, signOut],
+  )
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
