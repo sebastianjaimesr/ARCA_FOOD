@@ -15,8 +15,8 @@ export type Credentials = { username: string; salt: string; hash: string; iterat
 
 export const CREDENTIALS: Credentials = {
   username: 'sebasjaimes222',
-  salt: 'E8/JKpAMTS6ZLhJ651kkAw==',
-  hash: '84EyypSibA4mdsFTeAOa7E4F2nD2Dq8HVFDWcnkSs40=',
+  salt: 'PTZQWnxErqbzQlqEXFX5sg==',
+  hash: 'cmB7cfZmQPtHyURXNg5/VVi8wLhzxwGxudkVh0xLMno=',
   iterations: 210_000,
 }
 
