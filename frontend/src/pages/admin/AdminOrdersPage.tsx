@@ -2,6 +2,7 @@ import { Bike, ChevronLeft, ChevronRight, ClipboardList, RefreshCw, Search, Stor
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { Alert, Button, Empty, Loading, PageHeader, StatusBadge, TextInput } from '../../components/admin/ui'
+import { STATIC_MODE } from '../../config/mode'
 import { useAdminData } from '../../hooks/useAdminData'
 import { formatCOP, formatDateTime } from '../../lib/format'
 import { adminApi } from '../../services/admin'
@@ -90,7 +91,7 @@ export function AdminOrdersPage() {
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Código (ARC-1001), nombre o celular"
+              placeholder={`Código (${STATIC_MODE ? 'WEB-…' : 'ARC-1001'}), nombre o celular`}
               aria-label="Buscar pedidos"
               className="pl-9"
             />
@@ -184,7 +185,7 @@ export function AdminOrdersPage() {
 
           <nav aria-label="Páginas" className="mt-4 flex items-center justify-between text-sm text-cream-300">
             <span>
-              {orders.data.total} pedidos · página {page} de {totalPages}
+              {orders.data.total} {orders.data.total === 1 ? 'pedido' : 'pedidos'} · página {page} de {totalPages}
             </span>
             <span className="flex gap-2">
               <Button disabled={page <= 1} onClick={() => update({ pagina: String(page - 1) })} aria-label="Página anterior">

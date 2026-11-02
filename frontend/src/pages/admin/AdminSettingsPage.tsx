@@ -139,7 +139,13 @@ function BusinessForm({ settings, onSaved }: { settings: AdminSettings; onSaved:
                 <div key={DAYS[i]} className="grid grid-cols-[110px_auto_1fr_1fr] items-center gap-2 text-sm">
                   <span className="font-medium text-cream-100">{DAYS[i]}</span>
                   <label className="flex items-center gap-1.5 text-xs text-cream-300">
-                    <input type="checkbox" className="accent-brand-500" checked={row.open} onChange={(e) => setRow(i, { open: e.target.checked })} />
+                    <input
+                      type="checkbox"
+                      className="accent-brand-500"
+                      checked={row.open}
+                      onChange={(e) => setRow(i, { open: e.target.checked })}
+                      aria-label={`Abre el ${DAYS[i]?.toLowerCase()}`}
+                    />
                     Abre
                   </label>
                   <TextInput type="time" value={row.from} disabled={!row.open} onChange={(e) => setRow(i, { from: e.target.value })} aria-label={`${DAYS[i]} abre`} className="mt-0" />

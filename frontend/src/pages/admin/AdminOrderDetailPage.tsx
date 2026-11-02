@@ -2,6 +2,7 @@ import { ArrowLeft, Ban, Bike, ChefHat, CircleCheckBig, MessageCircle, PackageCh
 import { useState, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router'
 import { Alert, Button, Field, Loading, Panel, StatusBadge, TextArea } from '../../components/admin/ui'
+import { STATIC_MODE } from '../../config/mode'
 import { useAdminData } from '../../hooks/useAdminData'
 import { formatCOP, formatDateTime } from '../../lib/format'
 import { adminApi, errorMessage } from '../../services/admin'
@@ -11,7 +12,12 @@ import { STATUS_LABELS, type OrderStatus } from '../../types/order'
 // Acción de cada transición. Qué botones aparecen lo decide el backend
 // (allowedTransitions); aquí solo está el texto.
 const ACTIONS: Partial<Record<OrderStatus, { label: string; icon: typeof ChefHat; hint?: string }>> = {
-  CONFIRMADO: { label: 'Confirmar pedido', icon: CircleCheckBig, hint: 'Al confirmar se descuentan las existencias de los productos con inventario.' },
+  CONFIRMADO: {
+    label: 'Confirmar pedido',
+    icon: CircleCheckBig,
+    // La demostración no maneja inventario por unidades.
+    hint: STATIC_MODE ? undefined : 'Al confirmar se descuentan las existencias de los productos con inventario.',
+  },
   EN_PREPARACION: { label: 'Empezar preparación', icon: ChefHat },
   LISTO: { label: 'Marcar como listo', icon: PackageCheck },
   EN_CAMINO: { label: 'Enviar (en camino)', icon: Truck },

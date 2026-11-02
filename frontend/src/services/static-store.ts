@@ -3,7 +3,9 @@
 // Reutiliza las reglas del backend en vez de copiarlas:
 //   - priceCart: el mismo cálculo de precios, variantes, adicionales y stock.
 //   - createOrderSchema: la misma validación y saneamiento de los datos.
+//   - isOpenAt: el mismo horario de atención.
 import { CartError, priceCart, type CatalogProduct } from '../../../backend/src/domain/pricing.ts'
+import { isOpenAt } from '../../../backend/src/domain/schedule.ts'
 import { createOrderSchema } from '../../../backend/src/validators/orders.validators.ts'
 import { publicCategories, publicProducts, publicSettings, readDb, updateDb } from '../local/local-db'
 import type { Quote } from '../types/catalog'
@@ -36,6 +38,23 @@ function catalog(): Map<string, CatalogProduct> {
   )
 }
 
+// Mismas comprobaciones que resolveDelivery en el backend: recepción, horario y modalidad.
+function checkOpen(fulfillment: QuoteRequest['fulfillment'], now = new Date()) {
+  const settings = publicSettings(readDb())
+  if (!settings.acceptingOrders) {
+    throw new ApiError(409, 'STORE_CLOSED', 'En este momento no estamos recibiendo pedidos en línea')
+  }
+  if (!isOpenAt(settings.openingHours, now, settings.timezone)) {
+    throw new ApiError(409, 'STORE_CLOSED', 'Estamos cerrados en este momento. Revisa nuestro horario')
+  }
+  if (fulfillment === 'DOMICILIO' && !settings.deliveryEnabled) {
+    throw new ApiError(422, 'FULFILLMENT_UNAVAILABLE', 'Los domicilios no están disponibles en este momento')
+  }
+  if (fulfillment === 'RECOGIDA' && !settings.pickupEnabled) {
+    throw new ApiError(422, 'FULFILLMENT_UNAVAILABLE', 'La recogida en el local no está disponible en este momento')
+  }
+}
+
 function delivery(fulfillment: QuoteRequest['fulfillment'], zoneId: string | null | undefined) {
   const zones = publicSettings(readDb()).deliveryZones
   if (fulfillment !== 'DOMICILIO' || zones.length === 0) return null
@@ -58,6 +77,7 @@ function price(items: QuoteRequest['items'], fulfillment: QuoteRequest['fulfillm
 }
 
 export async function staticQuote(body: QuoteRequest): Promise<Quote> {
+  if (body.fulfillment) checkOpen(body.fulfillment)
   return price(body.items, body.fulfillment, body.deliveryZoneId)
 }
 
@@ -70,16 +90,13 @@ function reference() {
 }
 
 export async function staticCreateOrder(body: CreateOrderBody): Promise<{ order: Order; replayed: boolean }> {
-  if (!publicSettings(readDb()).acceptingOrders) {
-    throw new ApiError(409, 'STORE_CLOSED', 'En este momento no estamos recibiendo pedidos en línea')
-  }
-
   const parsed = createOrderSchema.safeParse(body)
   if (!parsed.success) {
     const first = parsed.error.issues[0]
     throw new ApiError(400, 'VALIDATION_ERROR', first?.message ?? 'Datos inválidos', parsed.error.issues)
   }
   const input = parsed.data
+  checkOpen(input.fulfillment)
   const quote = price(input.items, input.fulfillment, input.deliveryZoneId)
   if (input.expectedTotal !== undefined && input.expectedTotal !== quote.total) {
     throw new ApiError(409, 'PRICE_CHANGED', 'Los precios o la disponibilidad cambiaron. Revisa tu pedido', { quote })

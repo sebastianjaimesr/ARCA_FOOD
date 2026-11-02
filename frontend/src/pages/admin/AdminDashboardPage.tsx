@@ -2,6 +2,7 @@ import { AlertTriangle, BarChart3, ChefHat, CircleCheckBig, Clock, PackageX, Rec
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { Alert, Empty, Loading, PageHeader, Panel, StatTile } from '../../components/admin/ui'
+import { STATIC_MODE } from '../../config/mode'
 import { useAdminData } from '../../hooks/useAdminData'
 import { formatCOP } from '../../lib/format'
 import { adminApi } from '../../services/admin'
@@ -88,7 +89,7 @@ function DashboardContent({ stats }: { stats: DashboardStats }) {
           <StatTile
             label="Pedidos recibidos"
             value={received.total}
-            hint={`${received.byStatus.CANCELADO} cancelados · ${received.byStatus.PENDIENTE} sin confirmar`}
+            hint={`${received.byStatus.CANCELADO} ${received.byStatus.CANCELADO === 1 ? 'cancelado' : 'cancelados'} · ${received.byStatus.PENDIENTE} sin confirmar`}
             icon={BarChart3}
           />
         </div>
@@ -97,7 +98,8 @@ function DashboardContent({ stats }: { stats: DashboardStats }) {
         </p>
       </section>
 
-      <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+      {/* La demostración no maneja inventario por unidades: sin panel de stock. */}
+      <div className={`grid gap-6 ${STATIC_MODE ? '' : 'lg:grid-cols-[1.4fr_1fr]'}`}>
         <Panel title="Productos más vendidos">
           {hasSales && stats.topProducts.length > 0 ? (
             <TopProducts items={stats.topProducts} />
@@ -108,6 +110,7 @@ function DashboardContent({ stats }: { stats: DashboardStats }) {
           )}
         </Panel>
 
+        {!STATIC_MODE && (
         <Panel
           title="Stock bajo"
           actions={
@@ -136,6 +139,7 @@ function DashboardContent({ stats }: { stats: DashboardStats }) {
             </ul>
           )}
         </Panel>
+        )}
       </div>
     </div>
   )

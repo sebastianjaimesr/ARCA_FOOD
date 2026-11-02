@@ -111,8 +111,7 @@ export function AdminProductsPage() {
                   {p.name}
                 </Link>
                 <p className="text-xs text-cream-300">
-                  {p.categoryName} · {p.variants.filter((v) => v.isActive).length > 0 ? `${p.variants.filter((v) => v.isActive).length} variantes · desde ` : ''}
-                  {formatCOP(p.price)}
+                  {p.categoryName} · {priceLabel(p)}
                   {p.trackStock && (
                     <span className={p.stockQuantity <= p.minStock ? 'font-semibold text-amber-300' : ''}> · Stock {p.stockQuantity}</span>
                   )}
@@ -139,6 +138,14 @@ export function AdminProductsPage() {
       )}
     </div>
   )
+}
+
+// Con variantes, el cliente paga el precio de la variante (igual que en la tienda).
+function priceLabel(p: AdminProduct) {
+  const variants = p.variants.filter((v) => v.isActive)
+  if (variants.length === 0) return formatCOP(p.price)
+  const min = Math.min(...variants.map((v) => Number(v.price)))
+  return `${variants.length} ${variants.length === 1 ? 'variante' : 'variantes'} · desde ${formatCOP(min)}`
 }
 
 function QuickSwitch({ label, checked, disabled, onClick }: { label: string; checked: boolean; disabled: boolean; onClick: () => void }) {

@@ -93,6 +93,23 @@ describe('base local (modo demostración)', () => {
     expect(stats.topProducts[0]).toMatchObject({ name: 'Clásica', quantity: 2 })
   })
 
+  it('la tienda respeta recepción, horario y modalidades de la configuración', async () => {
+    await adminApi.updateSettings({ acceptingOrders: false })
+    await expect(pickupOrder()).rejects.toMatchObject({ code: 'STORE_CLOSED' })
+
+    // Horario de otro día de la semana: ahora está cerrado.
+    const now = new Date()
+    const day = ((now.getUTCDay() + 6) % 7) + 1
+    const other = day === 7 ? 1 : day + 1
+    await adminApi.updateSettings({ acceptingOrders: true, openingHours: [{ day: other, open: '10:00', close: '11:00' }] })
+    await expect(pickupOrder()).rejects.toMatchObject({ code: 'STORE_CLOSED' })
+
+    await adminApi.updateSettings({ openingHours: null, pickupEnabled: false })
+    await expect(pickupOrder()).rejects.toMatchObject({ code: 'FULFILLMENT_UNAVAILABLE' })
+    await adminApi.updateSettings({ pickupEnabled: true })
+    await expect(pickupOrder()).resolves.toBeTruthy()
+  })
+
   it('los periodos empiezan a medianoche de Bogotá (semana desde el lunes)', () => {
     const now = new Date('2026-10-30T03:00:00Z') // jueves 29 de octubre, 22:00 en Bogotá
     expect(periodStart('day', now).toISOString()).toBe('2026-10-29T05:00:00.000Z')

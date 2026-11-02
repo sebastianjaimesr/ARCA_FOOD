@@ -94,7 +94,7 @@ export function AdminLayout() {
           </nav>
         </header>
         {STATIC_MODE && (
-          <p role="note" className="flex items-start gap-2 border-b border-amber-400/30 bg-amber-400/10 px-4 py-2 text-xs text-amber-100 md:px-8">
+          <aside aria-label="Modo demostración" className="flex items-start gap-2 border-b border-amber-400/30 bg-amber-400/10 px-4 py-2 text-xs text-amber-100 md:px-8">
             <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
             <span>
               <strong>Modo demostración:</strong> los datos se guardan solo en este navegador. Los pedidos de los clientes llegan por WhatsApp.{' '}
@@ -102,7 +102,7 @@ export function AdminLayout() {
                 Cómo pasar a producción
               </Link>
             </span>
-          </p>
+          </aside>
         )}
         <main className="flex-1 p-4 md:p-8">
           <Outlet />

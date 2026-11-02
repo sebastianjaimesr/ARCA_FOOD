@@ -34,7 +34,10 @@ export const adminRoutes: RouteObject = {
           lazy: async () => ({ Component: (await import('../pages/admin/AdminProductFormPage')).AdminProductFormPage }),
         },
         { path: 'catalogo', lazy: async () => ({ Component: (await import('../pages/admin/AdminCatalogPage')).AdminCatalogPage }) },
-        { path: 'inventario', lazy: async () => ({ Component: (await import('../pages/admin/AdminInventoryPage')).AdminInventoryPage }) },
+        // Inventario por unidades solo existe con backend (la demostración no tiene movimientos).
+        ...(import.meta.env.VITE_STATIC_MODE === 'true'
+          ? []
+          : [{ path: 'inventario', lazy: async () => ({ Component: (await import('../pages/admin/AdminInventoryPage')).AdminInventoryPage }) }]),
         { path: 'guia', lazy: async () => ({ Component: (await import('../pages/admin/AdminGuidePage')).AdminGuidePage }) },
         {
           path: 'configuracion',

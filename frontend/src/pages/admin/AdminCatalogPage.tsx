@@ -113,17 +113,17 @@ function CategoryRow({ category, editable, onSave }: { category: AdminCategory; 
 
   return (
     <div className={`grid items-center gap-2 rounded-xl bg-ink-800 p-2 sm:grid-cols-[64px_1fr_1.4fr_auto_auto] ${category.isActive ? '' : 'opacity-60'}`}>
-      <TextInput type="number" value={order} onChange={(e) => setOrder(e.target.value)} disabled={!editable} aria-label="Orden" className="mt-0" />
-      <TextInput value={name} onChange={(e) => setName(e.target.value)} disabled={!editable} aria-label="Nombre" className="mt-0" />
-      <TextInput value={description} onChange={(e) => setDescription(e.target.value)} disabled={!editable} placeholder="Descripción (opcional)" aria-label="Descripción" className="mt-0" />
-      <span className="px-2 text-xs text-cream-300">{category.productsCount} productos</span>
+      <TextInput type="number" value={order} onChange={(e) => setOrder(e.target.value)} disabled={!editable} aria-label={`Orden de ${category.name}`} className="mt-0" />
+      <TextInput value={name} onChange={(e) => setName(e.target.value)} disabled={!editable} aria-label={`Nombre de la categoría ${category.name}`} className="mt-0" />
+      <TextInput value={description} onChange={(e) => setDescription(e.target.value)} disabled={!editable} placeholder="Descripción (opcional)" aria-label={`Descripción de ${category.name}`} className="mt-0" />
+      <span className="px-2 text-xs text-cream-300">{category.productsCount} {category.productsCount === 1 ? 'producto' : 'productos'}</span>
       {editable && (
         <span className="flex gap-1">
           {dirty && (
             <Button
               variant="primary"
               onClick={() => onSave({ name: name.trim(), description: description.trim() || null, sortOrder: Number(order) || 0 })}
-              aria-label="Guardar categoría"
+              aria-label={`Guardar ${category.name}`}
             >
               <Check className="size-4" aria-hidden />
             </Button>
@@ -209,7 +209,7 @@ function OptionRow({
 
   return (
     <div className={`grid items-center gap-2 rounded-xl bg-ink-800 p-2 sm:grid-cols-[1fr_140px_110px_auto] ${option.isActive ? '' : 'opacity-60'}`}>
-      <TextInput value={name} onChange={(e) => setName(e.target.value)} disabled={!editable} aria-label="Nombre del adicional" className="mt-0" />
+      <TextInput value={name} onChange={(e) => setName(e.target.value)} disabled={!editable} aria-label={`Nombre de ${option.name}`} className="mt-0" />
       <TextInput value={price} onChange={(e) => setPrice(e.target.value)} disabled={!editable} inputMode="numeric" aria-label={`Precio de ${option.name}`} aria-invalid={!isMoney(price)} className="mt-0" />
       <span className="px-2 text-xs text-cream-300">{formatCOP(option.price)}</span>
       {editable && (
